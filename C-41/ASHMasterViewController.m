@@ -9,9 +9,11 @@
 // View Controllers
 #import "ASHMasterViewController.h"
 #import "ASHDetailViewController.h"
+#import "ASHEditRecipeViewController.h"
 
 // View Model
 #import "ASHMasterViewModel.h"
+#import "ASHEditRecipeViewModel.h"
 
 @interface ASHMasterViewController ()
 
@@ -28,19 +30,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    @weakify(self);
+    [self.viewModel.updatedContentSignal subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)insertNewObject:(id)sender
-{
 }
 
 #pragma mark - Table View
@@ -74,12 +75,6 @@
     }   
 }
 
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // The table view should not be re-orderable.
-    return NO;
-}
-
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return [self.viewModel titleForSection:section];
 }
@@ -87,6 +82,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    } else if ([[segue identifier] isEqualToString:@"editRecipe"]) {
+        ASHEditRecipeViewController *viewController = (ASHEditRecipeViewController *)[segue.destinationViewController topViewController];
+        viewController.viewModel = [self.viewModel editViewModelForNewRecipe];
     }
 }
 

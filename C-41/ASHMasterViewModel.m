@@ -8,11 +8,11 @@
 
 #import "ASHMasterViewModel.h"
 
-// Utilities
-#import <libextobjc/extobjc.h>
-
 // Models
 #import "ASHRecipe.h"
+
+// View Models
+#import "ASHEditRecipeViewModel.h"
 
 @interface ASHMasterViewModel () <NSFetchedResultsControllerDelegate>
 
@@ -86,6 +86,18 @@
     return [recipe valueForKey:@keypath(recipe, blurb)];
 }
 
+-(ASHEditRecipeViewModel *)editViewModelForIndexPath:(NSIndexPath *)indexPath {
+    ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:[self recipeAtIndexPath:indexPath]];
+    return viewModel;
+}
+
+-(ASHEditRecipeViewModel *)editViewModelForNewRecipe {
+    ASHRecipe *recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:self.model];
+    ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
+    viewModel.inserting = YES;
+    return viewModel;
+}
+
 #pragma mark - Private Methods
 
 -(ASHRecipe *)recipeAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,8 +143,7 @@
     return _fetchedResultsController;
 }
 
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
-{
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
     [(RACSubject *)self.updatedContentSignal sendNext:nil];
 }
 

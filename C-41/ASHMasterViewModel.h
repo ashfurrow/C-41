@@ -8,6 +8,8 @@
 
 #import "RVMViewModel.h"
 
+@class ASHEditRecipeViewModel;
+
 @interface ASHMasterViewModel : RVMViewModel
 
 @property (nonatomic, readonly) RACSignal *updatedContentSignal;
@@ -20,6 +22,9 @@
 -(NSString *)titleForSection:(NSInteger)section;
 -(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath;
+
+-(ASHEditRecipeViewModel *)editViewModelForIndexPath:(NSIndexPath *)indexPath;
+-(ASHEditRecipeViewModel *)editViewModelForNewRecipe;
 
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath;
 

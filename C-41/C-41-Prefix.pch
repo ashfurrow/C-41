@@ -23,4 +23,7 @@
 // ReactiveCocoa
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+// Utilities
+#import <libextobjc/extobjc.h>
+
 #endif

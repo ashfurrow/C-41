@@ -32,6 +32,8 @@
 		5E93AD8718672BA200795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
 		5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7D1866717900795C9E /* ASHRecipe.m */; };
 		5E93AD8918672BE200795C9E /* ASHStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7A1866717800795C9E /* ASHStep.m */; };
+		5E93AD8C18673FF700795C9E /* ASHEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD8B18673FF600795C9E /* ASHEditRecipeViewController.m */; };
+		5E93AD8F186742E000795C9E /* ASHEditRecipeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD8E186742E000795C9E /* ASHEditRecipeViewModel.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,10 @@
 		5E93AD81186674CF00795C9E /* ASHMasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHMasterViewModel.h; sourceTree = "<group>"; };
 		5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHMasterViewModel.m; sourceTree = "<group>"; };
 		5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHMasterViewModelTests.m; sourceTree = "<group>"; };
+		5E93AD8A18673FF600795C9E /* ASHEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEditRecipeViewController.h; sourceTree = "<group>"; };
+		5E93AD8B18673FF600795C9E /* ASHEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditRecipeViewController.m; sourceTree = "<group>"; };
+		5E93AD8D186742E000795C9E /* ASHEditRecipeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEditRecipeViewModel.h; sourceTree = "<group>"; };
+		5E93AD8E186742E000795C9E /* ASHEditRecipeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditRecipeViewModel.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
 		E4259052B52F436089AB732B /* libPods-C-41Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C-41Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E87AE95DCF864EBE970B807D /* Pods-C-41Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41Tests.xcconfig"; path = "Pods/Pods-C-41Tests.xcconfig"; sourceTree = "<group>"; };
@@ -149,7 +155,6 @@
 			children = (
 				5E93AD4C1866695600795C9E /* ASHAppDelegate.h */,
 				5E93AD4D1866695600795C9E /* ASHAppDelegate.m */,
-				5E93AD4F1866695600795C9E /* Main.storyboard */,
 				5E93AD5B1866695600795C9E /* Images.xcassets */,
 				5E93AD801866718700795C9E /* View Controllers */,
 				5E93AD7F1866717D00795C9E /* Models */,
@@ -202,14 +207,43 @@
 		5E93AD801866718700795C9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E93AD4F1866695600795C9E /* Main.storyboard */,
+				5E93AD90186742E600795C9E /* Root View Controller */,
+				5E93AD92186742F600795C9E /* Detail View Controller */,
+				5E93AD91186742ED00795C9E /* Edit Recipe View Controller */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5E93AD90186742E600795C9E /* Root View Controller */ = {
+			isa = PBXGroup;
+			children = (
 				5E93AD551866695600795C9E /* ASHMasterViewController.h */,
 				5E93AD561866695600795C9E /* ASHMasterViewController.m */,
 				5E93AD81186674CF00795C9E /* ASHMasterViewModel.h */,
 				5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */,
+			);
+			name = "Root View Controller";
+			sourceTree = "<group>";
+		};
+		5E93AD91186742ED00795C9E /* Edit Recipe View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E93AD8A18673FF600795C9E /* ASHEditRecipeViewController.h */,
+				5E93AD8B18673FF600795C9E /* ASHEditRecipeViewController.m */,
+				5E93AD8D186742E000795C9E /* ASHEditRecipeViewModel.h */,
+				5E93AD8E186742E000795C9E /* ASHEditRecipeViewModel.m */,
+			);
+			name = "Edit Recipe View Controller";
+			sourceTree = "<group>";
+		};
+		5E93AD92186742F600795C9E /* Detail View Controller */ = {
+			isa = PBXGroup;
+			children = (
 				5E93AD581866695600795C9E /* ASHDetailViewController.h */,
 				5E93AD591866695600795C9E /* ASHDetailViewController.m */,
 			);
-			name = "View Controllers";
+			name = "Detail View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +417,9 @@
 				5E93AD7B1866717800795C9E /* ASHStep.m in Sources */,
 				5E93AD4A1866695600795C9E /* main.m in Sources */,
 				5E93AD541866695600795C9E /* C_41.xcdatamodeld in Sources */,
+				5E93AD8F186742E000795C9E /* ASHEditRecipeViewModel.m in Sources */,
 				5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */,
+				5E93AD8C18673FF700795C9E /* ASHEditRecipeViewController.m in Sources */,
 				5E93AD4E1866695600795C9E /* ASHAppDelegate.m in Sources */,
 				5E93AD7E1866717900795C9E /* ASHRecipe.m in Sources */,
 				5E93AD5A1866695600795C9E /* ASHDetailViewController.m in Sources */,
