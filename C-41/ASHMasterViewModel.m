@@ -16,6 +16,15 @@
 
 @implementation ASHMasterViewModel
 
+-(instancetype)initWithModel:(id)model {
+    self = [super initWithModel:model];
+    if (self == nil) return nil;
+    
+    self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"ASHMasterViewModel updatedContentSignal"];
+    
+    return self;
+}
+
 #pragma mark - Public Methods
 
 -(NSInteger)numberOfSections {

@@ -17,7 +17,7 @@
 SpecBegin(ASHMasterViewModel)
 
 describe(@"ASHMasterViewModel", ^{
-    it(@"should return the number of sections returned by the NSFRC", ^{
+    it (@"should return the number of sections returned by the NSFRC", ^{
         id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
         [[[mockFetchedResultsController stub] andReturn:@[[NSObject new]]] sections];
         
@@ -29,7 +29,7 @@ describe(@"ASHMasterViewModel", ^{
         expect(numberOfSections).to.equal(1);
     });
     
-    it(@"should return the correct number of items in a section by the NSFRC", ^{
+    it (@"should return the correct number of items in a section by the NSFRC", ^{
         NSUInteger numberOfItems = 42;
         
         id mockSectionInfo = [OCMockObject mockForProtocol:@protocol(NSFetchedResultsSectionInfo)];
@@ -46,7 +46,7 @@ describe(@"ASHMasterViewModel", ^{
         expect(numberOfItemsInSection).to.equal(numberOfItems);
     });
     
-    it(@"shold delete a managed object", ^{
+    it (@"shold delete a managed object", ^{
         id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
         
         id mockManagedObjectContext = [OCMockObject mockForClass:[NSManagedObjectContext class]];
@@ -66,7 +66,7 @@ describe(@"ASHMasterViewModel", ^{
         [mockManagedObjectContext verify];
     });
     
-    it(@"should send next on updatedContentSignal when NSFRC delegate method is called", ^{
+    it (@"should send next on updatedContentSignal when NSFRC delegate method is called", ^{
         id mockSubject = [OCMockObject mockForClass:[RACSubject class]];
         [[mockSubject expect] sendNext:[OCMArg isNil]];
         
@@ -77,6 +77,11 @@ describe(@"ASHMasterViewModel", ^{
         [mockViewModel controllerDidChangeContent:nil];
         
         [mockSubject verify];
+    });
+    
+    it (@"should have an updatedContentSignal when initialized", ^{
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        expect(viewModel.updatedContentSignal).toNot.beNil();
     });
 });
 
