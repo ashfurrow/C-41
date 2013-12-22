@@ -22,6 +22,16 @@
 
 @end
 
+#pragma mark - Private Helpers
+
+static id partialMockForViewModel() {
+    ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+    id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+    return mockViewModel;
+}
+
+#pragma mark - Tests
+
 SpecBegin(ASHMasterViewModel)
 
 describe(@"ASHMasterViewModel", ^{
@@ -29,8 +39,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
         [[[mockFetchedResultsController stub] andReturn:@[[NSObject new]]] sections];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
         
         NSInteger numberOfSections = [mockViewModel numberOfSections];
@@ -46,8 +55,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
         [[[mockFetchedResultsController stub] andReturn:@[mockSectionInfo]] sections];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
         
         NSInteger numberOfItemsInSection = [mockViewModel numberOfItemsInSection:0];
@@ -65,8 +73,7 @@ describe(@"ASHMasterViewModel", ^{
         [[[mockFetchedResultsController stub] andReturn:mockObject] objectAtIndexPath:OCMOCK_ANY];
         [[[mockFetchedResultsController stub] andReturn:mockManagedObjectContext] managedObjectContext];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
         
         [mockViewModel deleteObjectAtIndexPath:nil];
@@ -78,8 +85,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockSubject = [OCMockObject mockForClass:[RACSubject class]];
         [[mockSubject expect] sendNext:[OCMArg isNil]];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockSubject] updatedContentSignal];
         
         [mockViewModel controllerDidChangeContent:nil];
@@ -98,8 +104,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
         [[[mockFetchedResultsController stub] andReturn:mockObject] objectAtIndexPath:OCMOCK_ANY];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
         
         id objectAtIndexPath = [mockViewModel recipeAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -113,8 +118,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
         [[[mockObject expect] andReturn:title] valueForKey:[OCMArg checkWithSelector:@selector(isEqualToString:) onObject:@"name"]];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockObject] recipeAtIndexPath:OCMOCK_ANY];
         
         NSString *returnedTitle = [mockViewModel titleAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
@@ -129,8 +133,7 @@ describe(@"ASHMasterViewModel", ^{
         id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
         [[[mockObject expect] andReturn:subtitle] valueForKey:[OCMArg checkWithSelector:@selector(isEqualToString:) onObject:@"blurb"]];
         
-        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        id mockViewModel = partialMockForViewModel();
         [[[mockViewModel stub] andReturn:mockObject] recipeAtIndexPath:OCMOCK_ANY];
         
         NSString *returnedSubTitle = [mockViewModel subtitleAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
