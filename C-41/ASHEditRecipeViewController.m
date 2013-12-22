@@ -41,7 +41,6 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     
     // ReactiveCocoa Bindings
     RAC(self, title) = RACObserve(self.viewModel, name);
-    
 }
 
 #pragma mark - User Interaction
@@ -102,9 +101,31 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (indexPath.section == ASHEditRecipeViewControllerMetadataSection) {
+        if (indexPath.row == 0) {
+        } else {
+        }
+    } else if (indexPath.section == ASHEditRecipeViewControllerFilmTypeSection) {
+        [self configureFilmTypeCell:cell forIndexPath:indexPath];
+    } else {
+        if (indexPath.row == [self.viewModel numberOfSteps]) {
+        } else {
+        }
+    }
     
     return cell;
+}
+
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return indexPath.section == ASHEditRecipeViewControllerFilmTypeSection;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    int32_t oldFilmType = self.viewModel.filmType;
+    self.viewModel.filmType = [self.viewModel filmTypeForSection:indexPath.row];
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath, [NSIndexPath indexPathForRow:[self.viewModel sectionForFilmTpe:oldFilmType] inSection:ASHEditRecipeViewControllerFilmTypeSection]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -169,5 +190,18 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     return YES;
 }
 */
+
+#pragma mark - Cell Configuration
+
+-(void)configureFilmTypeCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    int32_t filmType = [self.viewModel filmTypeForSection:indexPath.row];
+    NSString *title = [self.viewModel titleForFilmTyle:filmType];
+    cell.textLabel.text = title;
+    
+    BOOL isFilmType = filmType == self.viewModel.filmType;
+    cell.accessoryType = isFilmType ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+}
 
 @end

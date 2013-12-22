@@ -23,7 +23,8 @@
     self = [super initWithModel:model];
     if (self == nil) return nil;
     
-    RAC(self, name) = RACObserve(self.model, name);
+    RACChannelTo(self, name) = RACChannelTo(self.model, name);
+    RACChannelTo(self, filmType, @(ASHRecipeFilmTypeColourNegative)) = RACChannelTo(self.model, filmType, @(ASHRecipeFilmTypeColourNegative));
     
     return self;
 }
@@ -46,6 +47,30 @@
 
 -(void)willDismiss {
     [self.model.managedObjectContext save:nil];
+}
+
+-(NSInteger)sectionForFilmTpe:(int32_t)filmType {
+    return filmType;
+}
+
+-(int32_t)filmTypeForSection:(NSInteger)section {
+    return section;
+}
+
+-(NSString *)titleForFilmTyle:(int32_t)filmType {
+    if (filmType == ASHRecipeFilmTypeBlackAndWhite) {
+        return NSLocalizedString(@"Black and White", @"Film type cell title");
+    } else if (filmType == ASHRecipeFilmTypeColourNegative) {
+        return NSLocalizedString(@"Colour Negative", @"Film type cell title");
+    } else if (filmType == ASHRecipeFilmTypeColourPositive) {
+        return NSLocalizedString(@"Colour Positive", @"Film type cell title");
+    }
+    
+    return nil;
+}
+
+-(BOOL)isFilmTypeOfModel:(int32_t)filmType {
+    return self.model.filmType == filmType;
 }
 
 @end

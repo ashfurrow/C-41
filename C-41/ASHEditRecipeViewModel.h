@@ -16,10 +16,14 @@
 @property (nonatomic, assign, getter = isInserting) BOOL inserting;
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, assign) int32_t filmType;
 
 -(BOOL)shouldShowCancelButton;
 -(NSInteger)numberOfSteps;
 -(void)cancel;
 -(void)willDismiss;
+-(int32_t)filmTypeForSection:(NSInteger)section;
+-(NSInteger)sectionForFilmTpe:(int32_t)filmType;
+-(NSString *)titleForFilmTyle:(int32_t)filmType;
 
 @end
