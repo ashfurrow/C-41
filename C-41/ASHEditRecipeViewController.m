@@ -13,6 +13,7 @@
 
 enum {
     ASHEditRecipeViewControllerMetadataSection = 0,
+    ASHEditRecipeViewControllerFilmTypeSection,
     ASHEditRecipeViewControllerStepsSection,
     ASHEditRecipeViewControllerNumberOfSections
 };
@@ -27,6 +28,7 @@ static NSString *TitleCellIdentifier = @"title";
 static NSString *DescriptionCellIdentifier = @"description";
 static NSString *StepCellIdentifier = @"step";
 static NSString *AddStepCellIdentifier = @"addStep";
+static NSString *FilmTypeCellIdentifier = @"filmType";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -71,6 +73,8 @@ static NSString *AddStepCellIdentifier = @"addStep";
     // Return the number of rows in the section.
     if (section == ASHEditRecipeViewControllerMetadataSection) {
         return 2;
+    } else if (section == ASHEditRecipeViewControllerFilmTypeSection) {
+        return 3;
     } else if (section == ASHEditRecipeViewControllerStepsSection) {
         return [self.viewModel numberOfSteps] + 1; //+1 for "add" row
     }
@@ -86,6 +90,8 @@ static NSString *AddStepCellIdentifier = @"addStep";
         } else {
             cellIdentifier = DescriptionCellIdentifier;
         }
+    } else if (indexPath.section == ASHEditRecipeViewControllerFilmTypeSection) {
+        cellIdentifier = FilmTypeCellIdentifier;
     } else {
         if (indexPath.row == [self.viewModel numberOfSteps]) {
             cellIdentifier = AddStepCellIdentifier;
@@ -99,6 +105,18 @@ static NSString *AddStepCellIdentifier = @"addStep";
     // Configure the cell...
     
     return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == ASHEditRecipeViewControllerMetadataSection) {
+        return nil;
+    } else if (section == ASHEditRecipeViewControllerFilmTypeSection) {
+        return NSLocalizedString(@"Film Type", @"Edit View Controller section title");
+    } else if (section == ASHEditRecipeViewControllerStepsSection) {
+        return NSLocalizedString(@"Steps", @"Edit View Controller section title");
+    } else {
+        return nil;
+    }
 }
 
 // Override to support conditional editing of the table view.
