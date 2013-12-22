@@ -65,6 +65,19 @@ describe(@"ASHMasterViewModel", ^{
         
         [mockManagedObjectContext verify];
     });
+    
+    it(@"should send next on updatedContentSignal when NSFRC delegate method is called", ^{
+        id mockSubject = [OCMockObject mockForClass:[RACSubject class]];
+        [[mockSubject expect] sendNext:[OCMArg isNil]];
+        
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        [[[mockViewModel stub] andReturn:mockSubject] updatedContentSignal];
+        
+        [mockViewModel controllerDidChangeContent:nil];
+        
+        [mockSubject verify];
+    });
 });
 
 SpecEnd
