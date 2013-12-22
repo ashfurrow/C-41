@@ -98,6 +98,12 @@ describe(@"ASHMasterViewModel", ^{
         expect(viewModel.updatedContentSignal).toNot.beNil();
     });
     
+    it (@"should use the model as its MOC", ^{
+        id moc = [NSObject new];
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] initWithModel:moc];
+        expect(moc).to.equal(viewModel.model);
+    });
+    
     it (@"should return the object at an index path", ^{
         id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
         

@@ -13,10 +13,11 @@
 @property (nonatomic, readonly) RACSignal *updatedContentSignal;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, nonatomic) NSManagedObjectContext *model;
 
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;
+-(NSString *)titleForSection:(NSInteger)section;
 -(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath;
 -(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath;
 

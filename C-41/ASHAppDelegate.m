@@ -35,8 +35,7 @@
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ASHMasterViewController *controller = (ASHMasterViewController *)navigationController.topViewController;
     
-    ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
-    viewModel.managedObjectContext = self.managedObjectContext;
+    ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] initWithModel:self.managedObjectContext];
     controller.viewModel = viewModel;
     
     // Setup model
@@ -99,8 +98,15 @@
         
         ASHRecipe *c41Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:self.managedObjectContext];
         c41Recipe.name = NSLocalizedString(@"C-41 Colour Process", @"Initial setup title");
-        c41Recipe.blurb = NSLocalizedString(@"Standard C-41 colour negative film recipe.", @"Initial setup title");
+        c41Recipe.blurb = NSLocalizedString(@"Standard C-41 colour negative film recipe.", @"Initial setup subtitle");
         c41Recipe.filmType = ASHRecipeFilmTypeColourNegative;
+        
+        ASHRecipe *delta3200Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:self.managedObjectContext];
+        delta3200Recipe.name = NSLocalizedString(@"Ilford Delta 3200", @"Initial setup title");
+        delta3200Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's high-ISO film.", @"Initial setup subtitle");
+        delta3200Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
+        
+        [self saveContext];
     }
 }
 

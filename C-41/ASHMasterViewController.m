@@ -80,6 +80,10 @@
     return NO;
 }
 
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [self.viewModel titleForSection:section];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -88,6 +92,8 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
+    cell.textLabel.text = [self.viewModel titleAtIndexPath:indexPath];
+    cell.detailTextLabel.text = [self.viewModel subtitleAtIndexPath:indexPath];
 }
 
 @end

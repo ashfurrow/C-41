@@ -30,6 +30,8 @@
     
     self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"ASHMasterViewModel updatedContentSignal"];
     
+    [self.fetchedResultsController performFetch:nil];
+    
     return self;
 }
 
@@ -58,6 +60,22 @@
     }
 }
 
+-(NSString *)titleForSection:(NSInteger)section {
+    id<NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
+    NSArray *sectionObjects = [sectionInfo objects];
+    ASHRecipe *representativeObject = [sectionObjects firstObject];
+    
+    if (representativeObject.filmType == ASHRecipeFilmTypeBlackAndWhite) {
+        return NSLocalizedString(@"Black and White", @"Section header title");
+    } else if (representativeObject.filmType == ASHRecipeFilmTypeColourNegative) {
+        return NSLocalizedString(@"Colour Negative", @"Section header title");
+    } else if (representativeObject.filmType == ASHRecipeFilmTypeColourPositive) {
+        return NSLocalizedString(@"Colour Positive", @"Section header title");
+    }
+    
+    return nil;
+}
+
 -(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath {
     ASHRecipe *recipe = [self recipeAtIndexPath:indexPath];
     return [recipe valueForKey:@keypath(recipe, name)];
@@ -84,7 +102,7 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     // Edit the entity name as appropriate.
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ASHRecipe" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"ASHRecipe" inManagedObjectContext:self.model];
     [fetchRequest setEntity:entity];
     
     // Set the batch size to a suitable number.
@@ -98,7 +116,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"filmType" cacheName:@"Master"];
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.model sectionNameKeyPath:@"filmType" cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     self.fetchedResultsController = aFetchedResultsController;
     
