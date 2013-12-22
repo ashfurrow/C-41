@@ -17,6 +17,8 @@
 
 -(NSInteger)numberOfSections;
 -(NSInteger)numberOfItemsInSection:(NSInteger)section;
+-(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath;
+-(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath;
 
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath;
 

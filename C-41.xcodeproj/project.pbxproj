@@ -28,8 +28,10 @@
 		5E93AD7B1866717800795C9E /* ASHStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7A1866717800795C9E /* ASHStep.m */; };
 		5E93AD7E1866717900795C9E /* ASHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7D1866717900795C9E /* ASHRecipe.m */; };
 		5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
-		5E93AD84186677CA00795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
 		5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */; };
+		5E93AD8718672BA200795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
+		5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7D1866717900795C9E /* ASHRecipe.m */; };
+		5E93AD8918672BE200795C9E /* ASHStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7A1866717800795C9E /* ASHStep.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -393,8 +395,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E93AD84186677CA00795C9E /* ASHMasterViewModel.m in Sources */,
+				5E93AD8918672BE200795C9E /* ASHStep.m in Sources */,
 				5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */,
+				5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */,
+				5E93AD8718672BA200795C9E /* ASHMasterViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

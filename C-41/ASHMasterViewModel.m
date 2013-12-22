@@ -8,9 +8,17 @@
 
 #import "ASHMasterViewModel.h"
 
+// Utilities
+#import <libextobjc/extobjc.h>
+
+// Models
+#import "ASHRecipe.h"
+
 @interface ASHMasterViewModel () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) RACSubject *updatedContentSignal;
+
+-(ASHRecipe *)recipeAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -48,6 +56,22 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
+}
+
+-(NSString *)titleAtIndexPath:(NSIndexPath *)indexPath {
+    ASHRecipe *recipe = [self recipeAtIndexPath:indexPath];
+    return [recipe valueForKey:@keypath(recipe, name)];
+}
+
+-(NSString *)subtitleAtIndexPath:(NSIndexPath *)indexPath {
+    ASHRecipe *recipe = [self recipeAtIndexPath:indexPath];
+    return [recipe valueForKey:@keypath(recipe, blurb)];
+}
+
+#pragma mark - Private Methods
+
+-(ASHRecipe *)recipeAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
 #pragma mark - Fetched results controller

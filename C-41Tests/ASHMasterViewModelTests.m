@@ -14,6 +14,14 @@
 
 #import "ASHMasterViewModel.h"
 
+// Private Implementation
+
+@interface ASHMasterViewModel () <NSFetchedResultsControllerDelegate>
+
+-(NSManagedObject *)recipeAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 SpecBegin(ASHMasterViewModel)
 
 describe(@"ASHMasterViewModel", ^{
@@ -82,6 +90,53 @@ describe(@"ASHMasterViewModel", ^{
     it (@"should have an updatedContentSignal when initialized", ^{
         ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
         expect(viewModel.updatedContentSignal).toNot.beNil();
+    });
+    
+    it (@"should return the object at an index path", ^{
+        id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
+        
+        id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
+        [[[mockFetchedResultsController stub] andReturn:mockObject] objectAtIndexPath:OCMOCK_ANY];
+        
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
+        
+        id objectAtIndexPath = [mockViewModel recipeAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
+        expect(objectAtIndexPath).to.equal(mockObject);
+    });
+    
+    it (@"should return the title of the object at that index path", ^{
+        NSString *title = @"Title";
+        
+        id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
+        [[[mockObject expect] andReturn:title] valueForKey:[OCMArg checkWithSelector:@selector(isEqualToString:) onObject:@"name"]];
+        
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        [[[mockViewModel stub] andReturn:mockObject] recipeAtIndexPath:OCMOCK_ANY];
+        
+        NSString *returnedTitle = [mockViewModel titleAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
+        expect(title).to.equal(returnedTitle);
+        [mockObject verify];
+    });
+    
+    it (@"should return the subtitle of the object at that index path", ^{
+        NSString *subtitle = @"blurb";
+        
+        id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
+        [[[mockObject expect] andReturn:subtitle] valueForKey:[OCMArg checkWithSelector:@selector(isEqualToString:) onObject:@"blurb"]];
+        
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        [[[mockViewModel stub] andReturn:mockObject] recipeAtIndexPath:OCMOCK_ANY];
+        
+        NSString *returnedSubTitle = [mockViewModel subtitleAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
+        expect(subtitle).to.equal(returnedSubTitle);
+        [mockObject verify];
     });
 });
 
