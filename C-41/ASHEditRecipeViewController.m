@@ -131,7 +131,9 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     
     int32_t oldFilmType = self.viewModel.filmType;
     self.viewModel.filmType = [self.viewModel filmTypeForSection:indexPath.row];
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath, [NSIndexPath indexPathForRow:[self.viewModel sectionForFilmTpe:oldFilmType] inSection:ASHEditRecipeViewControllerFilmTypeSection]] withRowAnimation:UITableViewRowAnimationFade];
+    if (oldFilmType != self.viewModel.filmType) {
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath, [NSIndexPath indexPathForRow:[self.viewModel sectionForFilmTpe:oldFilmType] inSection:ASHEditRecipeViewControllerFilmTypeSection]] withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
