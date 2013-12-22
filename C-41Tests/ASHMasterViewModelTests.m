@@ -45,6 +45,26 @@ describe(@"ASHMasterViewModel", ^{
         NSInteger numberOfItemsInSection = [mockViewModel numberOfItemsInSection:0];
         expect(numberOfItemsInSection).to.equal(numberOfItems);
     });
+    
+    it(@"shold delete a managed object", ^{
+        id mockObject = [OCMockObject mockForClass:[NSManagedObject class]];
+        
+        id mockManagedObjectContext = [OCMockObject mockForClass:[NSManagedObjectContext class]];
+        [[mockManagedObjectContext expect] deleteObject:mockObject];
+        [[[mockManagedObjectContext stub] andReturnValue:@(YES)] save:[OCMArg anyObjectRef]];
+        
+        id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
+        [[[mockFetchedResultsController stub] andReturn:mockObject] objectAtIndexPath:OCMOCK_ANY];
+        [[[mockFetchedResultsController stub] andReturn:mockManagedObjectContext] managedObjectContext];
+        
+        ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+        id mockViewModel = [OCMockObject partialMockForObject:viewModel];
+        [[[mockViewModel stub] andReturn:mockFetchedResultsController] fetchedResultsController];
+        
+        [mockViewModel deleteObjectAtIndexPath:nil];
+        
+        [mockManagedObjectContext verify];
+    });
 });
 
 SpecEnd
