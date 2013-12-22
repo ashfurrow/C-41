@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ASHRecipe" representedClassName="ASHRecipe" syncable="YES">
+        <attribute name="blurb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="filmType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="steps" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ASHStep" inverseName="receipe" inverseEntity="ASHStep" syncable="YES"/>
+    </entity>
+    <entity name="ASHStep" representedClassName="ASHStep" syncable="YES">
+        <attribute name="agitationDuration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="agitationFrequency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="blurb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="receipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASHRecipe" inverseName="steps" inverseEntity="ASHRecipe" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="ASHRecipe" positionX="160" positionY="192" width="128" height="118"/>
+        <element name="ASHStep" positionX="376" positionY="249" width="128" height="118"/>
     </elements>
 </model>
