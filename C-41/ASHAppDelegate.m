@@ -8,7 +8,12 @@
 
 #import "ASHAppDelegate.h"
 
+// View Controllers
 #import "ASHMasterViewController.h"
+
+// Models
+#import "ASHRecipe.h"
+#import "ASHStep.h"
 
 @implementation ASHAppDelegate
 
@@ -20,11 +25,17 @@
 {
     // Override point for customization after application launch.
     
+    // Setup window
     self.window.tintColor = [UIColor colorWithHexString:@"9E4B10"];
-    
+
+    // Setup view controllers
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ASHMasterViewController *controller = (ASHMasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
+    
+    // Setup model
+    [self ensureInitialLoad];
+    
     return YES;
 }
 							
@@ -67,6 +78,23 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } 
+    }
+}
+
+#pragma mark - Private Methods
+
+-(void)ensureInitialLoad {
+    NSString *initialLoadKey = @"Initial Load";
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    BOOL hasInitialLoad = [userDefaults boolForKey:initialLoadKey];
+    if (hasInitialLoad == NO) {
+        [userDefaults setBool:YES forKey:initialLoadKey];
+        
+        ASHRecipe *c41Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:self.managedObjectContext];
+        c41Recipe.name = NSLocalizedString(@"C-41 Colour Process", @"Initial setup title");
+        c41Recipe.blurb = NSLocalizedString(@"Standard C-41 colour negative film recipe.", @"Initial setup title");
+        c41Recipe.filmType = ASHRecipeFilmTypeColourNegative;
     }
 }
 

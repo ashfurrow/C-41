@@ -11,6 +11,12 @@
 
 @class ASHStep;
 
+enum ASHRecipeFilmType {
+    ASHRecipeFilmTypeColourNegative = 0,
+    ASHRecipeFilmTypeColourPositive,
+    ASHRecipeFilmTypeBlackAndWhite
+};
+
 @interface ASHRecipe : NSManagedObject
 
 @property (nonatomic) int32_t filmType;
