@@ -20,4 +20,7 @@
 // Custom Categories
 #import <UIColor-Utilities/UIColor+Expanded.h>
 
+// ReactiveCocoa
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
 #endif

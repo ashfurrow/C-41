@@ -5,14 +5,18 @@ PODS:
   - ReactiveCocoa/Core (2.1.8):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.1.8)
+  - ReactiveViewModel (0.1.1):
+    - ReactiveCocoa (~> 2.1)
   - UIColor-Utilities (1.0.1)
 
 DEPENDENCIES:
   - ReactiveCocoa (= 2.1.8)
+  - ReactiveViewModel (= 0.1.1)
   - UIColor-Utilities (= 1.0.1)
 
 SPEC CHECKSUMS:
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
+  ReactiveViewModel: e6cba4e138cfdaac19ea326bf42f6d6a61245f2c
   UIColor-Utilities: a392783be1b72e5d5ad9ae450ef2280239441bc8
 
 COCOAPODS: 0.27.1

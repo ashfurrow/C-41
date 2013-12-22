@@ -15,6 +15,9 @@
 #import "ASHRecipe.h"
 #import "ASHStep.h"
 
+// View Models
+#import "ASHMasterViewModel.h"
+
 @implementation ASHAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
@@ -31,7 +34,10 @@
     // Setup view controllers
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ASHMasterViewController *controller = (ASHMasterViewController *)navigationController.topViewController;
-    controller.managedObjectContext = self.managedObjectContext;
+    
+    ASHMasterViewModel *viewModel = [[ASHMasterViewModel alloc] init];
+    viewModel.managedObjectContext = self.managedObjectContext;
+    controller.viewModel = viewModel;
     
     // Setup model
     [self ensureInitialLoad];

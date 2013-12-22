@@ -28,6 +28,7 @@
 		5E93AD701866695600795C9E /* C_41Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD6F1866695600795C9E /* C_41Tests.m */; };
 		5E93AD7B1866717800795C9E /* ASHStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7A1866717800795C9E /* ASHStep.m */; };
 		5E93AD7E1866717900795C9E /* ASHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7D1866717900795C9E /* ASHRecipe.m */; };
+		5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		5E93AD7A1866717800795C9E /* ASHStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStep.m; sourceTree = "<group>"; };
 		5E93AD7C1866717900795C9E /* ASHRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHRecipe.h; sourceTree = "<group>"; };
 		5E93AD7D1866717900795C9E /* ASHRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHRecipe.m; sourceTree = "<group>"; };
+		5E93AD81186674CF00795C9E /* ASHMasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHMasterViewModel.h; sourceTree = "<group>"; };
+		5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHMasterViewModel.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +195,8 @@
 			children = (
 				5E93AD551866695600795C9E /* ASHMasterViewController.h */,
 				5E93AD561866695600795C9E /* ASHMasterViewController.m */,
+				5E93AD81186674CF00795C9E /* ASHMasterViewModel.h */,
+				5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */,
 				5E93AD581866695600795C9E /* ASHDetailViewController.h */,
 				5E93AD591866695600795C9E /* ASHDetailViewController.m */,
 			);
@@ -337,6 +342,7 @@
 				5E93AD7B1866717800795C9E /* ASHStep.m in Sources */,
 				5E93AD4A1866695600795C9E /* main.m in Sources */,
 				5E93AD541866695600795C9E /* C_41.xcdatamodeld in Sources */,
+				5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */,
 				5E93AD4E1866695600795C9E /* ASHAppDelegate.m in Sources */,
 				5E93AD7E1866717900795C9E /* ASHRecipe.m in Sources */,
 				5E93AD5A1866695600795C9E /* ASHDetailViewController.m in Sources */,

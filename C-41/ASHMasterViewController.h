@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import <CoreData/CoreData.h>
+@class ASHMasterViewModel;
 
-@interface ASHMasterViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+@interface ASHMasterViewController : UITableViewController
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) ASHMasterViewModel *viewModel;
 
 @end
