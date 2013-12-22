@@ -11,7 +11,13 @@
 #endif
 
 #ifdef __OBJC__
-    #import <UIKit/UIKit.h>
-    #import <Foundation/Foundation.h>
-    #import <CoreData/CoreData.h>
+
+// Standard iOS Nonsense
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+
+// Custom Categories
+#import <UIColor-Utilities/UIColor+Expanded.h>
+
 #endif

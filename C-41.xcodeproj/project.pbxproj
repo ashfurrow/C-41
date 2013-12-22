@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		251BA020AC1444D3B79A4119 /* libPods-C-41.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */; };
 		5E93AD3C1866695600795C9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3B1866695600795C9E /* Foundation.framework */; };
 		5E93AD3E1866695600795C9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3D1866695600795C9E /* CoreGraphics.framework */; };
 		5E93AD401866695600795C9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3F1866695600795C9E /* UIKit.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C-41.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E93AD381866695600795C9E /* C-41.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C-41.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E93AD3B1866695600795C9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E93AD3D1866695600795C9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,6 +63,7 @@
 		5E93AD6B1866695600795C9E /* C-41Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "C-41Tests-Info.plist"; sourceTree = "<group>"; };
 		5E93AD6D1866695600795C9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5E93AD6F1866695600795C9E /* C_41Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C_41Tests.m; sourceTree = "<group>"; };
+		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,7 @@
 				5E93AD421866695600795C9E /* CoreData.framework in Frameworks */,
 				5E93AD401866695600795C9E /* UIKit.framework in Frameworks */,
 				5E93AD3C1866695600795C9E /* Foundation.framework in Frameworks */,
+				251BA020AC1444D3B79A4119 /* libPods-C-41.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 				5E93AD691866695600795C9E /* C-41Tests */,
 				5E93AD3A1866695600795C9E /* Frameworks */,
 				5E93AD391866695600795C9E /* Products */,
+				CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +121,7 @@
 				5E93AD3F1866695600795C9E /* UIKit.framework */,
 				5E93AD411866695600795C9E /* CoreData.framework */,
 				5E93AD621866695600795C9E /* XCTest.framework */,
+				3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E93AD731866695600795C9E /* Build configuration list for PBXNativeTarget "C-41" */;
 			buildPhases = (
+				61349700181B46FFBE1C0D01 /* Check Pods Manifest.lock */,
 				5E93AD341866695600795C9E /* Sources */,
 				5E93AD351866695600795C9E /* Frameworks */,
 				5E93AD361866695600795C9E /* Resources */,
+				363B641E68664ADBAE453077 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +222,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ash Furrow";
 				TargetAttributes = {
+					5E93AD371866695600795C9E = {
+						DevelopmentTeam = 4P926H6HV3;
+					};
 					5E93AD601866695600795C9E = {
 						TestTargetID = 5E93AD371866695600795C9E;
 					};
@@ -258,6 +269,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		363B641E68664ADBAE453077 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-C-41-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61349700181B46FFBE1C0D01 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E93AD341866695600795C9E /* Sources */ = {
@@ -392,9 +436,11 @@
 		};
 		5E93AD741866695600795C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "C-41/C-41-Prefix.pch";
 				INFOPLIST_FILE = "C-41/C-41-Info.plist";
@@ -405,9 +451,11 @@
 		};
 		5E93AD751866695600795C9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "C-41/C-41-Prefix.pch";
 				INFOPLIST_FILE = "C-41/C-41-Info.plist";
@@ -477,6 +525,7 @@
 				5E93AD751866695600795C9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E93AD761866695600795C9E /* Build configuration list for PBXNativeTarget "C-41Tests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +534,7 @@
 				5E93AD781866695600795C9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

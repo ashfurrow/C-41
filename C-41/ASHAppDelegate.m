@@ -19,6 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    self.window.tintColor = [UIColor colorWithHexString:@"9E4B10"];
+    
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
     ASHMasterViewController *controller = (ASHMasterViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
