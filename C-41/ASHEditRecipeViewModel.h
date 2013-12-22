@@ -16,6 +16,7 @@
 @property (nonatomic, assign, getter = isInserting) BOOL inserting;
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *blurb;
 @property (nonatomic, assign) int32_t filmType;
 
 -(BOOL)shouldShowCancelButton;

@@ -24,6 +24,7 @@
     if (self == nil) return nil;
     
     RACChannelTo(self, name) = RACChannelTo(self.model, name);
+    RACChannelTo(self, blurb) = RACChannelTo(self.model, blurb);
     RACChannelTo(self, filmType, @(ASHRecipeFilmTypeColourNegative)) = RACChannelTo(self.model, filmType, @(ASHRecipeFilmTypeColourNegative));
     
     return self;

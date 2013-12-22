@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" id="ZgY-fU-St1">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" id="ZgY-fU-St1" customClass="ASHTextFieldCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZgY-fU-St1" id="DXD-WP-2vt">
@@ -43,8 +43,11 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="shD-4f-o1a" id="zKf-Ro-q9J"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="description" id="9iw-9H-qjJ">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="description" id="9iw-9H-qjJ" customClass="ASHTextFieldCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9iw-9H-qjJ" id="eKg-uh-nNb">
@@ -59,6 +62,9 @@
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textField" destination="8fk-rv-bBq" id="Bjr-KS-TTB"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="step" rowHeight="160" id="iAs-NN-7ry">
                                 <rect key="frame" x="0.0" y="174" width="320" height="160"/>

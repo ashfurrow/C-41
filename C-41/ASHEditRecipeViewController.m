@@ -11,6 +11,9 @@
 // View Model
 #import "ASHEditRecipeViewModel.h"
 
+// Views
+#import "ASHTextFieldCell.h"
+
 enum {
     ASHEditRecipeViewControllerMetadataSection = 0,
     ASHEditRecipeViewControllerFilmTypeSection,
@@ -99,17 +102,20 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
         }
     }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    id cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     if (indexPath.section == ASHEditRecipeViewControllerMetadataSection) {
         if (indexPath.row == 0) {
+            [self configureTitleCell:cell forIndexPath:indexPath];
         } else {
+            [self configureDescriptionCell:cell forIndexPath:indexPath];
         }
     } else if (indexPath.section == ASHEditRecipeViewControllerFilmTypeSection) {
         [self configureFilmTypeCell:cell forIndexPath:indexPath];
     } else {
-        if (indexPath.row == [self.viewModel numberOfSteps]) {
+        if (indexPath.row < [self.viewModel numberOfSteps]) {
         } else {
+            // nop – configured in storyboard
         }
     }
     
@@ -192,6 +198,16 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 */
 
 #pragma mark - Cell Configuration
+
+-(void)configureDescriptionCell:(ASHTextFieldCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    cell.textField.text = self.viewModel.blurb;
+    RAC(self.viewModel, blurb) = [cell.textField.rac_textSignal takeUntil:cell.rac_prepareForReuseSignal];
+}
+
+-(void)configureTitleCell:(ASHTextFieldCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    cell.textField.text = self.viewModel.name;
+    RAC(self.viewModel, name) = [cell.textField.rac_textSignal takeUntil:cell.rac_prepareForReuseSignal];
+}
 
 -(void)configureFilmTypeCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     int32_t filmType = [self.viewModel filmTypeForSection:indexPath.row];
