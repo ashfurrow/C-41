@@ -1,0 +1,18 @@
+PODS:
+  - ReactiveCocoa (2.1.8):
+    - ReactiveCocoa/Core
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/Core (2.1.8):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.1.8)
+  - UIColor-Utilities (1.0.1)
+
+DEPENDENCIES:
+  - ReactiveCocoa (= 2.1.8)
+  - UIColor-Utilities (= 1.0.1)
+
+SPEC CHECKSUMS:
+  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
+  UIColor-Utilities: a392783be1b72e5d5ad9ae450ef2280239441bc8
+
+COCOAPODS: 0.27.1
