@@ -31,6 +31,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
     @weakify(self);
     [self.viewModel.updatedContentSignal subscribeNext:^(id x) {
         @strongify(self);
@@ -79,6 +81,19 @@
     return [self.viewModel titleForSection:section];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.tableView.editing) {
+        ASHEditRecipeViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editViewController"];
+        viewController.viewModel = [self.viewModel editViewModelForIndexPath:indexPath];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
+    } else {
+        // nop – take care of by storyboard segue
+    }
+}
+
+#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
@@ -87,6 +102,12 @@
         viewController.viewModel = [self.viewModel editViewModelForNewRecipe];
     }
 }
+
+-(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return (self.editing == NO);
+}
+
+#pragma mark - Private Methods
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
