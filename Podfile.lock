@@ -1,4 +1,6 @@
 PODS:
+  - Expecta (0.2.3)
+  - OCMock (2.2.2)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core
     - ReactiveCocoa/no-arc
@@ -7,16 +9,23 @@ PODS:
   - ReactiveCocoa/no-arc (2.1.8)
   - ReactiveViewModel (0.1.1):
     - ReactiveCocoa (~> 2.1)
+  - Specta (0.2.1)
   - UIColor-Utilities (1.0.1)
 
 DEPENDENCIES:
+  - Expecta (~> 0.2.3)
+  - OCMock (~> 2.2.1)
   - ReactiveCocoa (= 2.1.8)
   - ReactiveViewModel (= 0.1.1)
+  - Specta (~> 0.2.1)
   - UIColor-Utilities (= 1.0.1)
 
 SPEC CHECKSUMS:
+  Expecta: dbc4a27fabb853bdd2e907e33f11ee43a9a47d0c
+  OCMock: ffba68873fd32cfd35d885bddad23bfa816da4a3
   ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
   ReactiveViewModel: e6cba4e138cfdaac19ea326bf42f6d6a61245f2c
+  Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
   UIColor-Utilities: a392783be1b72e5d5ad9ae450ef2280239441bc8
 
 COCOAPODS: 0.27.1

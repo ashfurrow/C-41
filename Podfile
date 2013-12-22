@@ -11,5 +11,11 @@ end
 
 target "C-41Tests" do
 
+pod 'ReactiveCocoa', '2.1.8'
+pod 'ReactiveViewModel', '0.1.1'
+pod 'Specta',      '~> 0.2.1'
+pod 'Expecta',     '~> 0.2.3'
+pod 'OCMock',      '~> 2.2.1'
+
 end
 

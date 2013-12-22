@@ -25,10 +25,12 @@
 		5E93AD651866695600795C9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3F1866695600795C9E /* UIKit.framework */; };
 		5E93AD661866695600795C9E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD411866695600795C9E /* CoreData.framework */; };
 		5E93AD6E1866695600795C9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E93AD6C1866695600795C9E /* InfoPlist.strings */; };
-		5E93AD701866695600795C9E /* C_41Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD6F1866695600795C9E /* C_41Tests.m */; };
 		5E93AD7B1866717800795C9E /* ASHStep.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7A1866717800795C9E /* ASHStep.m */; };
 		5E93AD7E1866717900795C9E /* ASHRecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD7D1866717900795C9E /* ASHRecipe.m */; };
 		5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
+		5E93AD84186677CA00795C9E /* ASHMasterViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */; };
+		5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */; };
+		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,14 +67,16 @@
 		5E93AD621866695600795C9E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5E93AD6B1866695600795C9E /* C-41Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "C-41Tests-Info.plist"; sourceTree = "<group>"; };
 		5E93AD6D1866695600795C9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5E93AD6F1866695600795C9E /* C_41Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = C_41Tests.m; sourceTree = "<group>"; };
 		5E93AD791866717800795C9E /* ASHStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStep.h; sourceTree = "<group>"; };
 		5E93AD7A1866717800795C9E /* ASHStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStep.m; sourceTree = "<group>"; };
 		5E93AD7C1866717900795C9E /* ASHRecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHRecipe.h; sourceTree = "<group>"; };
 		5E93AD7D1866717900795C9E /* ASHRecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHRecipe.m; sourceTree = "<group>"; };
 		5E93AD81186674CF00795C9E /* ASHMasterViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHMasterViewModel.h; sourceTree = "<group>"; };
 		5E93AD82186674CF00795C9E /* ASHMasterViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHMasterViewModel.m; sourceTree = "<group>"; };
+		5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHMasterViewModelTests.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
+		E4259052B52F436089AB732B /* libPods-C-41Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C-41Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E87AE95DCF864EBE970B807D /* Pods-C-41Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41Tests.xcconfig"; path = "Pods/Pods-C-41Tests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				5E93AD661866695600795C9E /* CoreData.framework in Frameworks */,
 				5E93AD651866695600795C9E /* UIKit.framework in Frameworks */,
 				5E93AD641866695600795C9E /* Foundation.framework in Frameworks */,
+				D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +115,7 @@
 				5E93AD3A1866695600795C9E /* Frameworks */,
 				5E93AD391866695600795C9E /* Products */,
 				CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */,
+				E87AE95DCF864EBE970B807D /* Pods-C-41Tests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +137,7 @@
 				5E93AD411866695600795C9E /* CoreData.framework */,
 				5E93AD621866695600795C9E /* XCTest.framework */,
 				3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */,
+				E4259052B52F436089AB732B /* libPods-C-41Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,7 +170,7 @@
 		5E93AD691866695600795C9E /* C-41Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5E93AD6F1866695600795C9E /* C_41Tests.m */,
+				5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */,
 				5E93AD6A1866695600795C9E /* Supporting Files */,
 			);
 			path = "C-41Tests";
@@ -229,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E93AD761866695600795C9E /* Build configuration list for PBXNativeTarget "C-41Tests" */;
 			buildPhases = (
+				74013782B3864FD598F7D47D /* Check Pods Manifest.lock */,
 				5E93AD5D1866695600795C9E /* Sources */,
 				5E93AD5E1866695600795C9E /* Frameworks */,
 				5E93AD5F1866695600795C9E /* Resources */,
+				A8527DDF5A6A41B996C5C53B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -332,6 +341,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		74013782B3864FD598F7D47D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A8527DDF5A6A41B996C5C53B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-C-41Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,7 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E93AD701866695600795C9E /* C_41Tests.m in Sources */,
+				5E93AD84186677CA00795C9E /* ASHMasterViewModel.m in Sources */,
+				5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +540,7 @@
 		};
 		5E93AD771866695600795C9E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E87AE95DCF864EBE970B807D /* Pods-C-41Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/C-41.app/C-41";
@@ -523,6 +564,7 @@
 		};
 		5E93AD781866695600795C9E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E87AE95DCF864EBE970B807D /* Pods-C-41Tests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/C-41.app/C-41";
