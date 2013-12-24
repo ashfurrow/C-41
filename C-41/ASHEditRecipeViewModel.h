@@ -19,10 +19,13 @@
 @property (nonatomic, strong) NSString *blurb;
 @property (nonatomic, assign) int32_t filmType;
 
--(BOOL)shouldShowCancelButton;
--(NSInteger)numberOfSteps;
 -(void)cancel;
 -(void)willDismiss;
+-(void)addStep;
+-(void)removeStepAtIndex:(NSInteger)index;
+
+-(BOOL)shouldShowCancelButton;
+-(NSInteger)numberOfSteps;
 -(int32_t)filmTypeForSection:(NSInteger)section;
 -(NSInteger)sectionForFilmTpe:(int32_t)filmType;
 -(NSString *)titleForFilmTyle:(int32_t)filmType;

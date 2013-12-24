@@ -74,4 +74,12 @@
     return self.model.filmType == filmType;
 }
 
+-(void)addStep {
+    
+}
+
+-(void)removeStepAtIndex:(NSInteger)index {
+    
+}
+
 @end
