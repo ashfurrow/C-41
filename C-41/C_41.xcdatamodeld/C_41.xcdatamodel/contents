@@ -12,6 +12,7 @@
         <attribute name="agitationFrequency" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="blurb" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperatureC" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="receipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ASHRecipe" inverseName="steps" inverseEntity="ASHRecipe" syncable="YES"/>
     </entity>
     <elements>
