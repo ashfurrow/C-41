@@ -13,6 +13,7 @@
 
 // Views
 #import "ASHTextFieldCell.h"
+#import "ASHStepCell.h"
 
 enum {
     ASHEditRecipeViewControllerMetadataSection = 0,
@@ -114,6 +115,7 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
         [self configureFilmTypeCell:cell forIndexPath:indexPath];
     } else {
         if (indexPath.row < [self.viewModel numberOfSteps]) {
+            [self configureStepCell:cell forIndexPath:indexPath];
         } else {
             // nop – configured in storyboard
         }
@@ -150,7 +152,7 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == ASHEditRecipeViewControllerStepsSection && indexPath.row < [self.viewModel numberOfSteps]) {
-        return 160;
+        return 286;
     }
     
     return 44;
@@ -213,6 +215,10 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 }
 
 #pragma mark - Cell Configuration
+
+-(void)configureStepCell:(ASHStepCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    
+}
 
 -(void)configureDescriptionCell:(ASHTextFieldCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     cell.textField.text = self.viewModel.blurb;
