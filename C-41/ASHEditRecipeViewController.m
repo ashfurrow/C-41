@@ -148,6 +148,14 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ASHEditRecipeViewControllerStepsSection && indexPath.row < [self.viewModel numberOfSteps]) {
+        return 160;
+    }
+    
+    return 44;
+}
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {

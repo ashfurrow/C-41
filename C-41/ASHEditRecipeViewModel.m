@@ -8,8 +8,9 @@
 
 #import "ASHEditRecipeViewModel.h"
 
-// Model
+// Models
 #import "ASHRecipe.h"
+#import "ASHStep.h"
 
 @interface ASHEditRecipeViewModel ()
 
@@ -75,11 +76,21 @@
 }
 
 -(void)addStep {
+    ASHStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:self.model.managedObjectContext];
     
+    NSMutableOrderedSet *stepsMutableOrderedSet = [self.model.steps mutableCopy];
+    [stepsMutableOrderedSet addObject:step];
+    
+    self.model.steps = [stepsMutableOrderedSet copy];
 }
 
 -(void)removeStepAtIndex:(NSInteger)index {
+    NSMutableOrderedSet *stepsMutableOrderedSet = [self.model.steps mutableCopy];
     
+    NSAssert(index < stepsMutableOrderedSet.count && index >= 0, @"Index must be within bounds of mutable set.");
+    [stepsMutableOrderedSet removeObjectAtIndex:index];
+    
+    self.model.steps = [stepsMutableOrderedSet copy];
 }
 
 @end
