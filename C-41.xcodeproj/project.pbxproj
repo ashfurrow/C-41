@@ -36,6 +36,7 @@
 		5E93AD8F186742E000795C9E /* ASHEditRecipeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD8E186742E000795C9E /* ASHEditRecipeViewModel.m */; };
 		5E93AD951867AB9A00795C9E /* ASHTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD941867AB9A00795C9E /* ASHTextFieldCell.m */; };
 		5E93AD98186B11FD00795C9E /* ASHStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD97186B11FD00795C9E /* ASHStepCell.m */; };
+		5E93AD9E186E4A1500795C9E /* ASHEditRecipeViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD9D186E4A1500795C9E /* ASHEditRecipeViewModelTests.m */; };
 		C02D7C61186814F9002E9D79 /* ASHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		5E93AD941867AB9A00795C9E /* ASHTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTextFieldCell.m; sourceTree = "<group>"; };
 		5E93AD96186B11FD00795C9E /* ASHStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHStepCell.h; sourceTree = "<group>"; };
 		5E93AD97186B11FD00795C9E /* ASHStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHStepCell.m; sourceTree = "<group>"; };
+		5E93AD9D186E4A1500795C9E /* ASHEditRecipeViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditRecipeViewModelTests.m; sourceTree = "<group>"; };
 		C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCoreDataStack.h; sourceTree = "<group>"; };
 		C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCoreDataStack.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */,
 				5E93AD6A1866695600795C9E /* Supporting Files */,
+				5E93AD9D186E4A1500795C9E /* ASHEditRecipeViewModelTests.m */,
 			);
 			path = "C-41Tests";
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E93AD9E186E4A1500795C9E /* ASHEditRecipeViewModelTests.m in Sources */,
 				5E93AD8918672BE200795C9E /* ASHStep.m in Sources */,
 				5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */,
 				5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */,
