@@ -8,7 +8,7 @@
 
 #import "RVMViewModel.h"
 
-@class ASHRecipe, ASHStep;
+@class ASHRecipe, ASHEditStepViewModel;
 
 @interface ASHEditRecipeViewModel : RVMViewModel
 
@@ -30,6 +30,6 @@
 -(NSInteger)sectionForFilmTpe:(int32_t)filmType;
 -(NSString *)titleForFilmTyle:(int32_t)filmType;
 -(NSString *)stepTitleAtIndex:(NSInteger)index;
--(ASHStep *)stepAtIndex:(NSInteger)index;
+-(ASHEditStepViewModel *)editStepViewModelAtIndex:(NSInteger)index;
 
 @end

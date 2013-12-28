@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
+// View Models
 #import "ASHEditRecipeViewModel.h"
+#import "ASHEditStepViewModel.h"
 
 // Models
 #import "ASHRecipe.h"
@@ -100,6 +102,13 @@
 
 -(ASHStep *)stepAtIndex:(NSInteger)index {
     return [self.model.steps objectAtIndex:index];
+}
+
+-(ASHEditStepViewModel *)editStepViewModelAtIndex:(NSInteger)index {
+    ASHStep *step = [self stepAtIndex:index];
+    
+    ASHEditStepViewModel *viewModel = [[ASHEditStepViewModel alloc] initWithModel:step];
+    return viewModel;
 }
 
 @end

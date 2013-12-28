@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
+// View Controllers
 #import "ASHEditRecipeViewController.h"
+#import "ASHEditStepViewController.h"
 
 // View Model
 #import "ASHEditRecipeViewModel.h"
+#import "ASHEditStepViewModel.h"
 
 // Views
 #import "ASHTextFieldCell.h"
@@ -46,6 +49,13 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     RAC(self, title) = RACObserve(self.viewModel, name);
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Need to reload since steps may have changed.
+    [self.tableView reloadData];
+}
+
 #pragma mark - User Interaction
 
 -(IBAction)cancelWasPressed:(id)sender {
@@ -62,6 +72,18 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 -(void)dismissSelf {
     [self.viewModel willDismiss];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Navigation Methods
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"editStep"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ASHEditStepViewModel *viewModel = [self.viewModel editStepViewModelAtIndex:indexPath.row];
+        
+        ASHEditStepViewController *viewController = segue.destinationViewController;
+        viewController.viewModel = viewModel;
+    }
 }
 
 #pragma mark - Table view data source
@@ -139,8 +161,7 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
         }
     } else if (indexPath.section == ASHEditRecipeViewControllerStepsSection) {
         if (indexPath.row < [self.viewModel numberOfSteps]) {
-            //TODO:
-            NSLog(@"%@", indexPath);
+            // will be taken care of by storyboard
         } else {
             [self.viewModel addStep];
             [tableView reloadSections:[NSIndexSet indexSetWithIndex:ASHEditRecipeViewControllerStepsSection] withRowAnimation:UITableViewRowAnimationAutomatic];
