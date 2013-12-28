@@ -35,6 +35,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // Set initial values
     self.stepNameTextField.text = self.viewModel.stepName;
     self.stepDescriptionTextField.text = self.viewModel.stepDescription;
     self.temperatureStepper.value = self.viewModel.temperatureCelcius;
@@ -53,7 +54,7 @@
     RAC(self.agitationDurationLabel, text) = RACObserve(self.viewModel, agitationDurationString);
     RAC(self.agitationFrequencyLabel, text) = RACObserve(self.viewModel, agitationFrequencyString);
     
-    id(^mapBlock)(UIStepper *stepper) = ^id(UIStepper *stepper){
+    id(^mapBlock)(UIStepper *) = ^id(UIStepper *stepper){
         return @(stepper.value);
     };
     
