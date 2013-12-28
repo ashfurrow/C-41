@@ -17,10 +17,12 @@ extern int32_t ASHEditStepViewModelDefaultAgitationFrequency;
 @property (nonatomic, strong) NSString *stepName;
 @property (nonatomic, strong) NSString *stepDescription;
 @property (nonatomic, assign) int32_t temperatureCelcius;
+@property (nonatomic, assign) int32_t duration;
 @property (nonatomic, assign) int32_t agitationDuration;
 @property (nonatomic, assign) int32_t agitationFrequency;
 
 @property (nonatomic, strong) NSString *temperatureString;
+@property (nonatomic, strong) NSString *durationString;
 @property (nonatomic, strong) NSString *agitationDurationString;
 @property (nonatomic, strong) NSString *agitationFrequencyString;
 

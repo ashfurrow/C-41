@@ -18,6 +18,7 @@
 @end
 
 int32_t ASHEditStepViewModelDefaultTemperature = 23;
+int32_t ASHEditStepViewModelDefaultDuration = 180;
 int32_t ASHEditStepViewModelDefaultAgitationDuration = 5;
 int32_t ASHEditStepViewModelDefaultAgitationFrequency = 60;
 
@@ -30,11 +31,18 @@ int32_t ASHEditStepViewModelDefaultAgitationFrequency = 60;
     RACChannelTo(self, stepName) = RACChannelTo(self.model, name);
     RACChannelTo(self, stepDescription) = RACChannelTo(self.model, blurb);
     RACChannelTo(self, temperatureCelcius, @(ASHEditStepViewModelDefaultTemperature)) = RACChannelTo(self.model, temperatureC, @(ASHEditStepViewModelDefaultTemperature));
+    RACChannelTo(self, duration, @(ASHEditStepViewModelDefaultDuration)) = RACChannelTo(self.model, duration, @(ASHEditStepViewModelDefaultDuration));
     RACChannelTo(self, agitationDuration, @(ASHEditStepViewModelDefaultAgitationDuration)) = RACChannelTo(self.model, agitationDuration, @(ASHEditStepViewModelDefaultAgitationDuration));
     RACChannelTo(self, agitationFrequency, @(ASHEditStepViewModelDefaultAgitationFrequency)) = RACChannelTo(self.model, agitationFrequency, @(ASHEditStepViewModelDefaultAgitationFrequency));
     
     RAC(self, temperatureString) = [RACObserve(self, temperatureCelcius) map:^id(NSNumber *value) {
         return [NSString stringWithFormat:@"%d℃", value.integerValue];
+    }];
+    RAC(self, durationString) = [RACObserve(self, duration) map:^id(NSNumber *value) {
+        NSInteger minutes = value.integerValue / 60;
+        NSInteger seconds = value.integerValue % 60;
+        
+        return [NSString stringWithFormat:@"For %d:%02d", minutes, seconds];
     }];
     RAC(self, agitationDurationString) = [RACObserve(self, agitationDuration) map:^id(NSNumber *value) {
         return [NSString stringWithFormat:NSLocalizedString(@"Agitate for %ds", @""), value.integerValue];
