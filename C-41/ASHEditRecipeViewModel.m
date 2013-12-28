@@ -77,6 +77,7 @@
 
 -(void)addStep {
     ASHStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:self.model.managedObjectContext];
+    step.name = NSLocalizedString(@"New Step", @"Default step name");
     
     NSMutableOrderedSet *stepsMutableOrderedSet = [self.model.steps mutableCopy];
     [stepsMutableOrderedSet addObject:step];
@@ -91,6 +92,14 @@
     [stepsMutableOrderedSet removeObjectAtIndex:index];
     
     self.model.steps = [stepsMutableOrderedSet copy];
+}
+
+-(NSString *)stepTitleAtIndex:(NSInteger)index {
+    return [[self stepAtIndex:index] name];
+}
+
+-(ASHStep *)stepAtIndex:(NSInteger)index {
+    return [self.model.steps objectAtIndex:index];
 }
 
 @end

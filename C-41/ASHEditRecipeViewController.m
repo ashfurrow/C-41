@@ -13,7 +13,6 @@
 
 // Views
 #import "ASHTextFieldCell.h"
-#import "ASHStepCell.h"
 
 enum {
     ASHEditRecipeViewControllerMetadataSection = 0,
@@ -125,16 +124,27 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 }
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-    return indexPath.section == ASHEditRecipeViewControllerFilmTypeSection;
+    return indexPath.section == ASHEditRecipeViewControllerFilmTypeSection ||
+           indexPath.section == ASHEditRecipeViewControllerStepsSection;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    int32_t oldFilmType = self.viewModel.filmType;
-    self.viewModel.filmType = [self.viewModel filmTypeForSection:indexPath.row];
-    if (oldFilmType != self.viewModel.filmType) {
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath, [NSIndexPath indexPathForRow:[self.viewModel sectionForFilmTpe:oldFilmType] inSection:ASHEditRecipeViewControllerFilmTypeSection]] withRowAnimation:UITableViewRowAnimationFade];
+    if (indexPath.section == ASHEditRecipeViewControllerFilmTypeSection) {
+        int32_t oldFilmType = self.viewModel.filmType;
+        self.viewModel.filmType = [self.viewModel filmTypeForSection:indexPath.row];
+        if (oldFilmType != self.viewModel.filmType) {
+            [self.tableView reloadRowsAtIndexPaths:@[indexPath, [NSIndexPath indexPathForRow:[self.viewModel sectionForFilmTpe:oldFilmType] inSection:ASHEditRecipeViewControllerFilmTypeSection]] withRowAnimation:UITableViewRowAnimationFade];
+        }
+    } else if (indexPath.section == ASHEditRecipeViewControllerStepsSection) {
+        if (indexPath.row < [self.viewModel numberOfSteps]) {
+            //TODO:
+            NSLog(@"%@", indexPath);
+        } else {
+            [self.viewModel addStep];
+            [tableView reloadSections:[NSIndexSet indexSetWithIndex:ASHEditRecipeViewControllerStepsSection] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     }
 }
 
@@ -148,14 +158,6 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
     } else {
         return nil;
     }
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == ASHEditRecipeViewControllerStepsSection && indexPath.row < [self.viewModel numberOfSteps]) {
-        return 286;
-    }
-    
-    return 44;
 }
 
 // Override to support conditional editing of the table view.
@@ -216,8 +218,8 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 
 #pragma mark - Cell Configuration
 
--(void)configureStepCell:(ASHStepCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    
+-(void)configureStepCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    cell.textLabel.text = [self.viewModel stepTitleAtIndex:indexPath.row];
 }
 
 -(void)configureDescriptionCell:(ASHTextFieldCell *)cell forIndexPath:(NSIndexPath *)indexPath {
