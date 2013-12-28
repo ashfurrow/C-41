@@ -80,6 +80,9 @@
 -(void)addStep {
     ASHStep *step = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:self.model.managedObjectContext];
     step.name = NSLocalizedString(@"New Step", @"Default step name");
+    step.temperatureC = ASHEditStepViewModelDefaultTemperature;
+    step.agitationDuration = ASHEditStepViewModelDefaultAgitationDuration;
+    step.agitationFrequency = ASHEditStepViewModelDefaultAgitationFrequency;
     
     NSMutableOrderedSet *stepsMutableOrderedSet = [self.model.steps mutableCopy];
     [stepsMutableOrderedSet addObject:step];

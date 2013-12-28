@@ -8,6 +8,10 @@
 
 #import "RVMViewModel.h"
 
+extern int32_t ASHEditStepViewModelDefaultTemperature;
+extern int32_t ASHEditStepViewModelDefaultAgitationDuration;
+extern int32_t ASHEditStepViewModelDefaultAgitationFrequency;
+
 @interface ASHEditStepViewModel : RVMViewModel
 
 @property (nonatomic, strong) NSString *stepName;
@@ -19,8 +23,5 @@
 @property (nonatomic, strong) NSString *temperatureString;
 @property (nonatomic, strong) NSString *agitationDurationString;
 @property (nonatomic, strong) NSString *agitationFrequencyString;
-
--(void)increaseTemperature;
--(void)decreaseTemperature;
 
 @end

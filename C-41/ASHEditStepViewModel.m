@@ -17,11 +17,9 @@
 
 @end
 
-static int32_t ASHEditStepViewModelDefaultTemperature = 23;
-static int32_t ASHEditStepViewModelDefaultAgitationDuration = 5;
-static int32_t ASHEditStepViewModelDefaultAgitationFrequency = 60;
-
-static int32_t ASHEditStepViewModelTemperatureIncrement = 1;
+int32_t ASHEditStepViewModelDefaultTemperature = 23;
+int32_t ASHEditStepViewModelDefaultAgitationDuration = 5;
+int32_t ASHEditStepViewModelDefaultAgitationFrequency = 60;
 
 @implementation ASHEditStepViewModel
 
@@ -39,35 +37,13 @@ static int32_t ASHEditStepViewModelTemperatureIncrement = 1;
         return [NSString stringWithFormat:@"%d℃", value.integerValue];
     }];
     RAC(self, agitationDurationString) = [RACObserve(self, agitationDuration) map:^id(NSNumber *value) {
-        return [NSString stringWithFormat:NSLocalizedString(@"Agitate for %d seconds", @""), value.integerValue];
+        return [NSString stringWithFormat:NSLocalizedString(@"Agitate for %ds", @""), value.integerValue];
     }];
     RAC(self, agitationFrequencyString) = [RACObserve(self, agitationFrequency) map:^id(NSNumber *value) {
-        return [NSString stringWithFormat:NSLocalizedString(@"Agitate every %d seconds", @""), value.integerValue];
+        return [NSString stringWithFormat:NSLocalizedString(@"Agitate every %ds", @""), value.integerValue];
     }];
     
     return self;
-}
-
-#pragma mark - Private Methods
-
--(void)ensureTemperatureBounds {
-    if (self.temperatureCelcius < 0) {
-        self.temperatureCelcius = 0;
-    } else if (self.temperatureCelcius > 100) {
-        self.temperatureCelcius = 100;
-    }
-}
-
-#pragma mark - Public Methods
-
--(void)increaseTemperature {
-    self.temperatureCelcius += ASHEditStepViewModelTemperatureIncrement;
-    [self ensureTemperatureBounds];
-}
-
--(void)decreaseTemperature {
-    self.temperatureCelcius -= ASHEditStepViewModelTemperatureIncrement;
-    [self ensureTemperatureBounds];
 }
 
 @end
