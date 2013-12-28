@@ -13,6 +13,7 @@
 
 // View Models
 #import "ASHEditRecipeViewModel.h"
+#import "ASHDetailViewModel.h"
 
 @interface ASHMasterViewModel () <NSFetchedResultsControllerDelegate>
 
@@ -95,6 +96,11 @@
     ASHRecipe *recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:self.model];
     ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
     viewModel.inserting = YES;
+    return viewModel;
+}
+
+-(ASHDetailViewModel *)detailViewModelForIndexPath:(NSIndexPath *)indexPath {
+    ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:[self recipeAtIndexPath:indexPath]];
     return viewModel;
 }
 

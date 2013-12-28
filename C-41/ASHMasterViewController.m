@@ -94,9 +94,12 @@
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        ASHDetailViewController *viewController = segue.destinationViewController;
+        viewController.viewModel = [self.viewModel detailViewModelForIndexPath:indexPath];
     } else if ([[segue identifier] isEqualToString:@"editRecipe"]) {
         ASHEditRecipeViewController *viewController = (ASHEditRecipeViewController *)[segue.destinationViewController topViewController];
         viewController.viewModel = [self.viewModel editViewModelForNewRecipe];

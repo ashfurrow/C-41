@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ASHDetailViewModel;
+
 @interface ASHDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) ASHDetailViewModel *viewModel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

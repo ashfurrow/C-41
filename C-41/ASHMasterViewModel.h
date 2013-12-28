@@ -8,7 +8,7 @@
 
 #import "RVMViewModel.h"
 
-@class ASHEditRecipeViewModel;
+@class ASHEditRecipeViewModel, ASHDetailViewModel;
 
 @interface ASHMasterViewModel : RVMViewModel
 
@@ -25,6 +25,7 @@
 
 -(ASHEditRecipeViewModel *)editViewModelForIndexPath:(NSIndexPath *)indexPath;
 -(ASHEditRecipeViewModel *)editViewModelForNewRecipe;
+-(ASHDetailViewModel *)detailViewModelForIndexPath:(NSIndexPath *)indexPath;
 
 -(void)deleteObjectAtIndexPath:(NSIndexPath *)indexPath;
 

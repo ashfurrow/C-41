@@ -38,6 +38,7 @@
 		5E93AD9E186E4A1500795C9E /* ASHEditRecipeViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93AD9D186E4A1500795C9E /* ASHEditRecipeViewModelTests.m */; };
 		5E93ADA2186F61B900795C9E /* ASHEditStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA1186F61B900795C9E /* ASHEditStepViewController.m */; };
 		5E93ADA5186F62A500795C9E /* ASHEditStepViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA4186F62A500795C9E /* ASHEditStepViewModel.m */; };
+		5E93ADA8186F981D00795C9E /* ASHDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA7186F981D00795C9E /* ASHDetailViewModel.m */; };
 		C02D7C61186814F9002E9D79 /* ASHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,8 @@
 		5E93ADA1186F61B900795C9E /* ASHEditStepViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditStepViewController.m; sourceTree = "<group>"; };
 		5E93ADA3186F62A500795C9E /* ASHEditStepViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHEditStepViewModel.h; sourceTree = "<group>"; };
 		5E93ADA4186F62A500795C9E /* ASHEditStepViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditStepViewModel.m; sourceTree = "<group>"; };
+		5E93ADA6186F981D00795C9E /* ASHDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDetailViewModel.h; sourceTree = "<group>"; };
+		5E93ADA7186F981D00795C9E /* ASHDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDetailViewModel.m; sourceTree = "<group>"; };
 		C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCoreDataStack.h; sourceTree = "<group>"; };
 		C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCoreDataStack.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
@@ -262,6 +265,8 @@
 			children = (
 				5E93AD581866695600795C9E /* ASHDetailViewController.h */,
 				5E93AD591866695600795C9E /* ASHDetailViewController.m */,
+				5E93ADA6186F981D00795C9E /* ASHDetailViewModel.h */,
+				5E93ADA7186F981D00795C9E /* ASHDetailViewModel.m */,
 			);
 			name = "Detail View Controller";
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E93AD951867AB9A00795C9E /* ASHTextFieldCell.m in Sources */,
+				5E93ADA8186F981D00795C9E /* ASHDetailViewModel.m in Sources */,
 				5E93AD7B1866717800795C9E /* ASHStep.m in Sources */,
 				5E93AD4A1866695600795C9E /* main.m in Sources */,
 				5E93AD541866695600795C9E /* C_41.xcdatamodeld in Sources */,
