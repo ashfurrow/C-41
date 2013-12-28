@@ -16,6 +16,7 @@
 @property (nonatomic) int32_t agitationDuration;
 @property (nonatomic) int32_t agitationFrequency;
 @property (nonatomic) int32_t temperatureC;
+@property (nonatomic) int32_t duration;
 @property (nonatomic, retain) NSString *blurb;
 @property (nonatomic, retain) NSManagedObject *receipe;
 

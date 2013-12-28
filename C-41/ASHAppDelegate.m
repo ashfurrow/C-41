@@ -85,6 +85,41 @@
         c41Recipe.blurb = NSLocalizedString(@"Standard C-41 colour negative film recipe.", @"Initial setup subtitle");
         c41Recipe.filmType = ASHRecipeFilmTypeColourNegative;
         
+        {
+            ASHStep *prewashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            prewashStep.receipe = c41Recipe;
+            prewashStep.name = NSLocalizedString(@"Prewash", @"C-41 Prewash step name");
+            prewashStep.blurb = NSLocalizedString(@"Water", @"C-41 prewas step description");
+            prewashStep.temperatureC = 39;
+            prewashStep.duration = 60;
+            
+            ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            developerStep.receipe = c41Recipe;
+            developerStep.name = NSLocalizedString(@"Developer", @"C-41 developer step name");
+            developerStep.temperatureC = 39;
+            developerStep.agitationDuration = 10;
+            developerStep.agitationFrequency = 60;
+            developerStep.duration = 210;
+            
+            ASHStep *blixStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            blixStep.receipe = c41Recipe;
+            blixStep.name = NSLocalizedString(@"Blix", @"C-41 blix step name");
+            blixStep.temperatureC = 39;
+            blixStep.agitationDuration = 10;
+            blixStep.agitationFrequency = 60;
+            blixStep.duration = 390;
+            
+            ASHStep *stabilizerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            stabilizerStep.receipe = c41Recipe;
+            stabilizerStep.name = NSLocalizedString(@"Stabilizer", @"C-41 stabilizer step name");
+            stabilizerStep.temperatureC = 23;
+            stabilizerStep.agitationDuration = 15;
+            stabilizerStep.agitationFrequency = 60;
+            stabilizerStep.duration = 60;
+            
+            c41Recipe.steps = [NSOrderedSet orderedSetWithArray:@[prewashStep, developerStep, blixStep, stabilizerStep]];
+        }
+        
         ASHRecipe *delta3200Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
         delta3200Recipe.name = NSLocalizedString(@"Ilford Delta 3200", @"Initial setup title");
         delta3200Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's high-ISO film.", @"Initial setup subtitle");
