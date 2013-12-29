@@ -18,6 +18,6 @@
 @property (nonatomic) int32_t temperatureC;
 @property (nonatomic) int32_t duration;
 @property (nonatomic, retain) NSString *blurb;
-@property (nonatomic, retain) NSManagedObject *receipe;
+@property (nonatomic, retain) NSManagedObject *recipe;
 
 @end

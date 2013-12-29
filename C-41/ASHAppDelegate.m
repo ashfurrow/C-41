@@ -87,14 +87,14 @@
             c41Recipe.filmType = ASHRecipeFilmTypeColourNegative;
             
             ASHStep *prewashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            prewashStep.receipe = c41Recipe;
+            prewashStep.recipe = c41Recipe;
             prewashStep.name = NSLocalizedString(@"Prewash", @"C-41 Prewash step name");
             prewashStep.blurb = NSLocalizedString(@"Water", @"C-41 prewas step description");
             prewashStep.temperatureC = 39;
             prewashStep.duration = 60;
             
             ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            developerStep.receipe = c41Recipe;
+            developerStep.recipe = c41Recipe;
             developerStep.name = NSLocalizedString(@"Developer", @"C-41 developer step name");
             developerStep.temperatureC = 39;
             developerStep.agitationDuration = 10;
@@ -102,7 +102,7 @@
             developerStep.duration = 210;
             
             ASHStep *blixStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            blixStep.receipe = c41Recipe;
+            blixStep.recipe = c41Recipe;
             blixStep.name = NSLocalizedString(@"Blix", @"C-41 blix step name");
             blixStep.temperatureC = 39;
             blixStep.agitationDuration = 10;
@@ -110,7 +110,7 @@
             blixStep.duration = 390;
             
             ASHStep *washStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            washStep.receipe = c41Recipe;
+            washStep.recipe = c41Recipe;
             washStep.name = NSLocalizedString(@"Wash", @"C-41 wash step name");
             washStep.blurb = NSLocalizedString(@"Water", @"C-41 was step description");
             washStep.temperatureC = 23;
@@ -119,7 +119,7 @@
             washStep.duration = 180;
             
             ASHStep *stabilizerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            stabilizerStep.receipe = c41Recipe;
+            stabilizerStep.recipe = c41Recipe;
             stabilizerStep.name = NSLocalizedString(@"Stabilizer", @"C-41 stabilizer step name");
             stabilizerStep.temperatureC = 23;
             stabilizerStep.agitationDuration = 15;
@@ -136,7 +136,7 @@
             delta3200Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
             
             ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            developerStep.receipe = delta3200Recipe;
+            developerStep.recipe = delta3200Recipe;
             developerStep.name = NSLocalizedString(@"Developer", @"Delta 3200 developer step name");
             developerStep.blurb = NSLocalizedString(@"Ilfosol", @"Delta 3200 developer step description");
             developerStep.temperatureC = 23;
@@ -145,7 +145,7 @@
             developerStep.duration = 600;
             
             ASHStep *stopBathStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            stopBathStep.receipe = delta3200Recipe;
+            stopBathStep.recipe = delta3200Recipe;
             stopBathStep.name = NSLocalizedString(@"Stop Bath", @"Delta 3200 stop bath step name");
             stopBathStep.blurb = NSLocalizedString(@"Ilfostop", @"Delta 3200 stop bath step description");
             stopBathStep.temperatureC = 23;
@@ -154,7 +154,7 @@
             stopBathStep.duration = 10;
             
             ASHStep *fixerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            fixerStep.receipe = delta3200Recipe;
+            fixerStep.recipe = delta3200Recipe;
             fixerStep.name = NSLocalizedString(@"Fixer", @"Delta 3200 fixer step name");
             fixerStep.blurb = NSLocalizedString(@"Ilford Rapid Fixer", @"Delta 3200 fixer step name");
             fixerStep.temperatureC = 23;
@@ -163,7 +163,7 @@
             fixerStep.duration = 180;
             
             ASHStep *washStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            washStep.receipe = delta3200Recipe;
+            washStep.recipe = delta3200Recipe;
             washStep.name = NSLocalizedString(@"Wash", @"Delta 3200 wash step name");
             washStep.blurb = NSLocalizedString(@"Water", @"Delta 3200 was step description");
             washStep.temperatureC = 23;
