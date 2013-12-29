@@ -1,8 +1,8 @@
 //
-//  ASHEditRecipeViewModelTests.m
+//  ASHDetailViewModelTests.m
 //  C-41
 //
-//  Created by Ash Furrow on 12/27/2013.
+//  Created by Ash Furrow on 12/28/2013.
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
@@ -12,8 +12,8 @@
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
 
-#import "ASHEditRecipeViewModel.h"
+#import "ASHDetailViewModel.h"
 
-SpecBegin(ASHEditRecipeViewModel)
+SpecBegin(ASHDetailViewModel)
 
 SpecEnd
