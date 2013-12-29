@@ -15,6 +15,7 @@
 @dynamic agitationDuration;
 @dynamic agitationFrequency;
 @dynamic blurb;
+@dynamic duration;
 @dynamic receipe;
 @dynamic temperatureC;
 
