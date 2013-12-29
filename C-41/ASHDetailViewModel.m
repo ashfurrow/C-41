@@ -23,6 +23,7 @@
 @property (nonatomic, assign) int32_t photoFilmType;
 
 @property (nonatomic, assign) NSInteger numberOfSteps;
+@property (nonatomic, assign) BOOL canStartTimer;
 
 @end
 
@@ -47,6 +48,9 @@
     }];
     RAC(self, numberOfSteps) = [RACObserve(self.model, steps) map:^id(NSOrderedSet *value) {
         return @([value count]);
+    }];
+    RAC(self, canStartTimer) = [RACObserve(self.model, steps) map:^id(NSOrderedSet *value) {
+        return @([value count] > 0);
     }];
     
     return self;

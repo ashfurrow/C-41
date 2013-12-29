@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly) NSString *recipeName;
 @property (nonatomic, readonly) NSString *recipeDescription;
+@property (nonatomic, readonly) NSString *timeRemainingString;
 
 @property (nonatomic, readonly, getter = isRunning) BOOL running;
 

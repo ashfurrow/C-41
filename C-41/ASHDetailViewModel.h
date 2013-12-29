@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSString *recipeFilmTypeString;
 
 @property (nonatomic, readonly) NSInteger numberOfSteps;
+@property (nonatomic, readonly) BOOL canStartTimer;
 
 -(NSString *)titleForStepAtIndex:(NSInteger)index;
 -(NSString *)subtitleForStepAtIndex:(NSInteger)index;

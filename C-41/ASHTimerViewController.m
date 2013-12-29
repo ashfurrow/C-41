@@ -39,6 +39,7 @@
     // Reactive Bindings
     @weakify(self);
     RAC(self.descriptionTextField, text) = RACObserve(self.viewModel, recipeDescription);
+    RAC(self.timeRemainingLabel, text) = RACObserve(self.viewModel, timeRemainingString);
     RAC(self.navigationItem, rightBarButtonItem) = [[RACObserve(self.viewModel, running) distinctUntilChanged] map:^id(NSNumber *running) {
         @strongify(self);
         if ([running boolValue] == YES) {

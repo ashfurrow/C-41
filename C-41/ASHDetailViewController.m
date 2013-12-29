@@ -28,6 +28,8 @@ enum {
 
 @interface ASHDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
+
 @end
 
 @implementation ASHDetailViewController
@@ -42,6 +44,9 @@ static NSString *CellIdentifier = @"cell";
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.title = self.viewModel.recipeName;
+    
+    // Reactive Bindings
+    RAC(self.startButton, enabled) = RACObserve(self.viewModel, canStartTimer);
 }
 
 #pragma mark - Navigation Methods
