@@ -10,4 +10,10 @@
 
 @interface ASHTimerViewModel : RVMViewModel
 
+@property (nonatomic, readonly) NSString *recipeName;
+@property (nonatomic, readonly, getter = isRunning) BOOL running;
+
+-(void)resume;
+-(void)pause;
+
 @end

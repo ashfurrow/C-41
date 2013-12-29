@@ -342,7 +342,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="das-5Z-s0e"/>
                                     <barButtonItem title="Start" id="iw9-8V-Jfm">
                                         <connections>
-                                            <segue destination="jNW-IH-dbe" kind="modal" id="KXg-3W-8fJ"/>
+                                            <segue destination="jNW-IH-dbe" kind="modal" identifier="start" id="KXg-3W-8fJ"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="vPJ-3f-hBR"/>
