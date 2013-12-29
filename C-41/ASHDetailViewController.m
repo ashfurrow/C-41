@@ -11,6 +11,19 @@
 // View Model
 #import "ASHDetailViewModel.h"
 
+enum {
+    ASHDetailViewControllerInfoSection = 0,
+    ASHDetailViewControllerStepsSection,
+    ASHDetailViewControllerNumberOfSections
+};
+
+enum {
+    ASHDetailViewControllerInfoNameRow = 0,
+    ASHDetailViewControllerInfoDescriptionRow,
+    ASHDetailViewControllerInfoFilmTypeRow,
+    ASHDetailViewControllerInfoNumberOfRows
+};
+
 @interface ASHDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
@@ -29,16 +42,59 @@ static NSString *CellIdentifier = @"cell";
 
 #pragma mark - UITableViewDataSource Methods
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return ASHDetailViewControllerNumberOfSections;
+}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    if (section == ASHDetailViewControllerInfoSection) {
+        return ASHDetailViewControllerInfoNumberOfRows;
+    } else if (section == ASHDetailViewControllerStepsSection) {
+        return [self.viewModel numberOfSteps];
+    }
+    
+    // silence compiler warning
+    return 0;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == ASHDetailViewControllerInfoSection) {
+        return NSLocalizedString(@"Info", @"Detail info section title");
+    } else {
+        return NSLocalizedString(@"Steps", @"Detail steps section title");
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    cell.textLabel.text = @"blah blah blah";
+    if (indexPath.section == ASHDetailViewControllerInfoSection) {
+        cell.detailTextLabel.text = nil;
+        if (indexPath.row == ASHDetailViewControllerInfoNameRow) {
+            cell.textLabel.text = [self.viewModel photoName];
+        } else if (indexPath.row ==  ASHDetailViewControllerInfoDescriptionRow) {
+            cell.textLabel.text = [self.viewModel photoDescription];
+        } else if (indexPath.row ==  ASHDetailViewControllerInfoFilmTypeRow) {
+            cell.textLabel.text = [self.viewModel photoFilmTypeString];
+        }
+    } else if (indexPath.section == ASHDetailViewControllerStepsSection) {
+        cell.textLabel.text = [self.viewModel titleForStepAtIndex:indexPath.row];
+        cell.detailTextLabel.text = [self.viewModel subtitleForStepAtIndex:indexPath.row];
+    }
     
     return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == ASHDetailViewControllerInfoSection && indexPath.row == ASHDetailViewControllerInfoDescriptionRow) {
+        NSString *description = self.viewModel.photoDescription;
+        
+        CGRect rect = [description boundingRectWithSize:CGSizeMake(290, 9000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} context:nil];
+        
+        return MAX(44.0f, CGRectGetHeight(rect) + 23);
+    } else {
+        return 44.0f;
+    }
 }
 
 @end

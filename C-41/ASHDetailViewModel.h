@@ -10,4 +10,13 @@
 
 @interface ASHDetailViewModel : RVMViewModel
 
+@property (nonatomic, readonly) NSString *photoName;
+@property (nonatomic, readonly) NSString *photoDescription;
+@property (nonatomic, readonly) NSString *photoFilmTypeString;
+
+@property (nonatomic, readonly) NSInteger numberOfSteps;
+
+-(NSString *)titleForStepAtIndex:(NSInteger)index;
+-(NSString *)subtitleForStepAtIndex:(NSInteger)index;
+
 @end
