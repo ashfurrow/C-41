@@ -16,6 +16,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <QuartzCore/QuartzCore.h>
 
 // Custom Categories
 #import <UIColor-Utilities/UIColor+Expanded.h>

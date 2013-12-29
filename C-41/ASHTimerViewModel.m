@@ -15,7 +15,10 @@
 
 // Private Access
 @property (nonatomic, strong) ASHRecipe *model;
+
 @property (nonatomic, strong) NSString *recipeName;
+@property (nonatomic, strong) NSString *recipeDescription;
+
 @property (nonatomic, assign, getter = isRunning) BOOL running;
 
 @end
@@ -27,6 +30,7 @@
     if (self == nil) return nil;
     
     RAC(self, recipeName) = RACObserve(self.model, name);
+    RAC(self, recipeDescription) = RACObserve(self.model, blurb);
     
     return self;
 }
