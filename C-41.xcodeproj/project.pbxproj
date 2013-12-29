@@ -39,6 +39,8 @@
 		5E93ADA2186F61B900795C9E /* ASHEditStepViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA1186F61B900795C9E /* ASHEditStepViewController.m */; };
 		5E93ADA5186F62A500795C9E /* ASHEditStepViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA4186F62A500795C9E /* ASHEditStepViewModel.m */; };
 		5E93ADA8186F981D00795C9E /* ASHDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADA7186F981D00795C9E /* ASHDetailViewModel.m */; };
+		5E93ADAC186FA49100795C9E /* ASHTimerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADAB186FA49100795C9E /* ASHTimerViewModel.m */; };
+		5E93ADAF186FA4A300795C9E /* ASHTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADAE186FA4A300795C9E /* ASHTimerViewController.m */; };
 		C02D7C61186814F9002E9D79 /* ASHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
@@ -97,6 +99,10 @@
 		5E93ADA4186F62A500795C9E /* ASHEditStepViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditStepViewModel.m; sourceTree = "<group>"; };
 		5E93ADA6186F981D00795C9E /* ASHDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHDetailViewModel.h; sourceTree = "<group>"; };
 		5E93ADA7186F981D00795C9E /* ASHDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDetailViewModel.m; sourceTree = "<group>"; };
+		5E93ADAA186FA49100795C9E /* ASHTimerViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTimerViewModel.h; sourceTree = "<group>"; };
+		5E93ADAB186FA49100795C9E /* ASHTimerViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewModel.m; sourceTree = "<group>"; };
+		5E93ADAD186FA4A300795C9E /* ASHTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTimerViewController.h; sourceTree = "<group>"; };
+		5E93ADAE186FA4A300795C9E /* ASHTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewController.m; sourceTree = "<group>"; };
 		C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCoreDataStack.h; sourceTree = "<group>"; };
 		C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCoreDataStack.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +236,7 @@
 				5E93AD4F1866695600795C9E /* Main.storyboard */,
 				5E93AD90186742E600795C9E /* Root View Controller */,
 				5E93AD92186742F600795C9E /* Detail View Controller */,
+				5E93ADA9186FA47900795C9E /* Timer View Controller */,
 				5E93AD91186742ED00795C9E /* Edit Recipe View Controller */,
 				5E93AD9F186F619200795C9E /* Edit Step View Controller */,
 			);
@@ -280,6 +287,17 @@
 				5E93ADA4186F62A500795C9E /* ASHEditStepViewModel.m */,
 			);
 			name = "Edit Step View Controller";
+			sourceTree = "<group>";
+		};
+		5E93ADA9186FA47900795C9E /* Timer View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5E93ADAD186FA4A300795C9E /* ASHTimerViewController.h */,
+				5E93ADAE186FA4A300795C9E /* ASHTimerViewController.m */,
+				5E93ADAA186FA49100795C9E /* ASHTimerViewModel.h */,
+				5E93ADAB186FA49100795C9E /* ASHTimerViewModel.m */,
+			);
+			name = "Timer View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +475,7 @@
 				5E93AD541866695600795C9E /* C_41.xcdatamodeld in Sources */,
 				5E93AD8F186742E000795C9E /* ASHEditRecipeViewModel.m in Sources */,
 				5E93AD83186674CF00795C9E /* ASHMasterViewModel.m in Sources */,
+				5E93ADAC186FA49100795C9E /* ASHTimerViewModel.m in Sources */,
 				C02D7C61186814F9002E9D79 /* ASHCoreDataStack.m in Sources */,
 				5E93AD8C18673FF700795C9E /* ASHEditRecipeViewController.m in Sources */,
 				5E93AD4E1866695600795C9E /* ASHAppDelegate.m in Sources */,
@@ -464,6 +483,7 @@
 				5E93AD5A1866695600795C9E /* ASHDetailViewController.m in Sources */,
 				5E93AD571866695600795C9E /* ASHMasterViewController.m in Sources */,
 				5E93ADA2186F61B900795C9E /* ASHEditStepViewController.m in Sources */,
+				5E93ADAF186FA4A300795C9E /* ASHTimerViewController.m in Sources */,
 				5E93ADA5186F62A500795C9E /* ASHEditStepViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

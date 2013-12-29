@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
+// View Models
+#import "ASHTimerViewModel.h"
 #import "ASHDetailViewModel.h"
 
 #import "ASHRecipe.h"
@@ -67,6 +69,11 @@
     NSInteger minutes = duration / 60;
     NSInteger seconds = duration % 60;
     return [NSString stringWithFormat:@"%d:%02d", minutes, seconds];
+}
+
+-(ASHTimerViewModel *)timerViewModel {
+    ASHTimerViewModel *timerViewModel = [[ASHTimerViewModel alloc] initWithModel:self.model];
+    return timerViewModel;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "RVMViewModel.h"
 
+@class ASHTimerViewModel;
+
 @interface ASHDetailViewModel : RVMViewModel
 
 @property (nonatomic, readonly) NSString *photoName;
@@ -18,5 +20,7 @@
 
 -(NSString *)titleForStepAtIndex:(NSInteger)index;
 -(NSString *)subtitleForStepAtIndex:(NSInteger)index;
+
+-(ASHTimerViewModel *)timerViewModel;
 
 @end

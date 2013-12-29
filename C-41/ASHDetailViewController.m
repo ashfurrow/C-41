@@ -6,7 +6,9 @@
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
+// View Controllers
 #import "ASHDetailViewController.h"
+#import "ASHTimerViewController.h"
 
 // View Model
 #import "ASHDetailViewModel.h"
@@ -38,6 +40,15 @@ static NSString *CellIdentifier = @"cell";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+#pragma mark - Navigation Methods
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"start"]) {
+        ASHTimerViewController *viewController = (ASHTimerViewController *)[segue.destinationViewController topViewController];
+        viewController.viewModel = [self.viewModel timerViewModel];
+    }
 }
 
 #pragma mark - UITableViewDataSource Methods
