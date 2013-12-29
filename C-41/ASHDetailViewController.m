@@ -41,7 +41,7 @@ static NSString *CellIdentifier = @"cell";
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.title = self.viewModel.photoName;
+    self.title = self.viewModel.recipeName;
 }
 
 #pragma mark - Navigation Methods
@@ -84,11 +84,11 @@ static NSString *CellIdentifier = @"cell";
     if (indexPath.section == ASHDetailViewControllerInfoSection) {
         cell.detailTextLabel.text = nil;
         if (indexPath.row == ASHDetailViewControllerInfoNameRow) {
-            cell.textLabel.text = [self.viewModel photoName];
+            cell.textLabel.text = [self.viewModel recipeName];
         } else if (indexPath.row ==  ASHDetailViewControllerInfoDescriptionRow) {
-            cell.textLabel.text = [self.viewModel photoDescription];
+            cell.textLabel.text = [self.viewModel recipeDescription];
         } else if (indexPath.row ==  ASHDetailViewControllerInfoFilmTypeRow) {
-            cell.textLabel.text = [self.viewModel photoFilmTypeString];
+            cell.textLabel.text = [self.viewModel recipeFilmTypeString];
         }
     } else if (indexPath.section == ASHDetailViewControllerStepsSection) {
         cell.textLabel.text = [self.viewModel titleForStepAtIndex:indexPath.row];
@@ -100,7 +100,7 @@ static NSString *CellIdentifier = @"cell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == ASHDetailViewControllerInfoSection && indexPath.row == ASHDetailViewControllerInfoDescriptionRow) {
-        NSString *description = self.viewModel.photoDescription;
+        NSString *description = self.viewModel.recipeDescription;
         
         CGRect rect = [description boundingRectWithSize:CGSizeMake(290, 9000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:17]} context:nil];
         

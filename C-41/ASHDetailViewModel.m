@@ -18,8 +18,8 @@
 @property (nonatomic, strong) ASHRecipe *model;
 
 // Private Access
-@property (nonatomic, strong) NSString *photoName;
-@property (nonatomic, strong) NSString *photoDescription;
+@property (nonatomic, strong) NSString *recipeName;
+@property (nonatomic, strong) NSString *recipeDescription;
 @property (nonatomic, assign) int32_t photoFilmType;
 
 @property (nonatomic, assign) NSInteger numberOfSteps;
@@ -32,9 +32,9 @@
     self = [super initWithModel:model];
     if (self == nil) return nil;
     
-    RAC(self, photoName) = RACObserve(self.model, name);
-    RAC(self, photoDescription) = RACObserve(self.model, blurb);
-    RAC(self, photoFilmTypeString) = [RACObserve(self.model, filmType) map:^id(NSNumber *filmTypeNumber) {
+    RAC(self, recipeName) = RACObserve(self.model, name);
+    RAC(self, recipeDescription) = RACObserve(self.model, blurb);
+    RAC(self, recipeFilmTypeString) = [RACObserve(self.model, filmType) map:^id(NSNumber *filmTypeNumber) {
         int32_t filmType = [filmTypeNumber intValue];
         
         if (filmType == ASHRecipeFilmTypeBlackAndWhite) {
