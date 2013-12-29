@@ -45,6 +45,7 @@
 		5EC0E85E186FBE3E00289440 /* ASHTimerViewModeltests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85D186FBE3E00289440 /* ASHTimerViewModeltests.m */; };
 		5EC0E860186FBE4E00289440 /* ASHEditStepViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85F186FBE4E00289440 /* ASHEditStepViewModelTests.m */; };
 		5EC0E8621870C2F200289440 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC0E8611870C2F200289440 /* QuartzCore.framework */; };
+		5EC0E8641870D80A00289440 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC0E8631870D80A00289440 /* AudioToolbox.framework */; };
 		C02D7C61186814F9002E9D79 /* ASHCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */; };
 		D2216E6F86DC4AFEBEC94EB3 /* libPods-C-41Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4259052B52F436089AB732B /* libPods-C-41Tests.a */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		5EC0E85D186FBE3E00289440 /* ASHTimerViewModeltests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewModeltests.m; sourceTree = "<group>"; };
 		5EC0E85F186FBE4E00289440 /* ASHEditStepViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditStepViewModelTests.m; sourceTree = "<group>"; };
 		5EC0E8611870C2F200289440 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5EC0E8631870D80A00289440 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHCoreDataStack.h; sourceTree = "<group>"; };
 		C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHCoreDataStack.m; sourceTree = "<group>"; };
 		CDC6DB0C52814D8C9FA00693 /* Pods-C-41.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C-41.xcconfig"; path = "Pods/Pods-C-41.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EC0E8641870D80A00289440 /* AudioToolbox.framework in Frameworks */,
 				5EC0E8621870C2F200289440 /* QuartzCore.framework in Frameworks */,
 				5E93AD3E1866695600795C9E /* CoreGraphics.framework in Frameworks */,
 				5E93AD421866695600795C9E /* CoreData.framework in Frameworks */,
@@ -171,6 +174,7 @@
 		5E93AD3A1866695600795C9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EC0E8631870D80A00289440 /* AudioToolbox.framework */,
 				5EC0E8611870C2F200289440 /* QuartzCore.framework */,
 				5E93AD3B1866695600795C9E /* Foundation.framework */,
 				5E93AD3D1866695600795C9E /* CoreGraphics.framework */,

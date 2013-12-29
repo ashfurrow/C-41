@@ -11,10 +11,12 @@
 @interface ASHTimerViewModel : RVMViewModel
 
 @property (nonatomic, readonly) NSString *recipeName;
-@property (nonatomic, readonly) NSString *recipeDescription;
+@property (nonatomic, readonly) NSString *currentStepString;
+@property (nonatomic, readonly) NSString *nextStepString;
 @property (nonatomic, readonly) NSString *timeRemainingString;
 
 @property (nonatomic, readonly, getter = isRunning) BOOL running;
+@property (nonatomic, readonly, getter = isComplete) BOOL complete;
 
 -(void)resume;
 -(void)pause;

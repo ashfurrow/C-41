@@ -385,20 +385,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" selectable="NO" id="yqV-i3-RdI">
-                                <rect key="frame" x="20" y="322" width="280" height="194"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="step description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p4u-su-FYJ">
+                                <rect key="frame" x="20" y="377" width="280" height="47"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="HNQ-dd-Adk"/>
                     <connections>
-                        <outlet property="descriptionTextField" destination="yqV-i3-RdI" id="5s3-1N-Bgz"/>
                         <outlet property="nextStepLabel" destination="uXE-nJ-Ybn" id="fh5-eK-FxC"/>
+                        <outlet property="stepNameLabel" destination="p4u-su-FYJ" id="MHW-h4-0Kn"/>
                         <outlet property="timeRemainingLabel" destination="A96-7Q-baB" id="Wbw-io-qLX"/>
                     </connections>
                 </viewController>
