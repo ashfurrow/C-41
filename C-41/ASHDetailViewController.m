@@ -40,6 +40,8 @@ static NSString *CellIdentifier = @"cell";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = self.viewModel.photoName;
 }
 
 #pragma mark - Navigation Methods
