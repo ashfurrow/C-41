@@ -16,4 +16,30 @@
 
 SpecBegin(ASHEditRecipeViewModel)
 
+describe(@"ASHEditRecipeViewModel", ^{
+    pending (@"it correctly gathers properties from the model", ^{
+        
+    });
+    
+    pending (@"cancel deletes the model iff inserting", ^{
+        
+    });
+    
+    pending (@"willDismiss saves the model's context", ^{
+        
+    });
+    
+    pending (@"shouldShowCancelButton appears iff inserting",^{
+        
+    });
+    
+    pending (@"returns the correct properties of steps and film type", ^{
+        
+    });
+    
+    pending (@"returns a correctly instantiated edit step view model", ^{
+        
+    });
+});
+
 SpecEnd
