@@ -16,4 +16,10 @@
 
 SpecBegin(ASHEditStepViewModel)
 
+describe(@"ASHEditStepViewModel", ^{
+    pending (@"correctly forwards model properties", ^{
+        
+    });
+});
+
 SpecEnd
