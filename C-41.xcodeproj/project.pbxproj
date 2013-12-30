@@ -42,7 +42,7 @@
 		5E93ADAC186FA49100795C9E /* ASHTimerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADAB186FA49100795C9E /* ASHTimerViewModel.m */; };
 		5E93ADAF186FA4A300795C9E /* ASHTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E93ADAE186FA4A300795C9E /* ASHTimerViewController.m */; };
 		5EC0E85C186FBE3200289440 /* ASHDetailViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85B186FBE3200289440 /* ASHDetailViewModelTests.m */; };
-		5EC0E85E186FBE3E00289440 /* ASHTimerViewModeltests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85D186FBE3E00289440 /* ASHTimerViewModeltests.m */; };
+		5EC0E85E186FBE3E00289440 /* ASHTimerViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85D186FBE3E00289440 /* ASHTimerViewModelTests.m */; };
 		5EC0E860186FBE4E00289440 /* ASHEditStepViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0E85F186FBE4E00289440 /* ASHEditStepViewModelTests.m */; };
 		5EC0E8621870C2F200289440 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC0E8611870C2F200289440 /* QuartzCore.framework */; };
 		5EC0E8641870D80A00289440 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC0E8631870D80A00289440 /* AudioToolbox.framework */; };
@@ -110,7 +110,7 @@
 		5E93ADAD186FA4A300795C9E /* ASHTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHTimerViewController.h; sourceTree = "<group>"; };
 		5E93ADAE186FA4A300795C9E /* ASHTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewController.m; sourceTree = "<group>"; };
 		5EC0E85B186FBE3200289440 /* ASHDetailViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHDetailViewModelTests.m; sourceTree = "<group>"; };
-		5EC0E85D186FBE3E00289440 /* ASHTimerViewModeltests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewModeltests.m; sourceTree = "<group>"; };
+		5EC0E85D186FBE3E00289440 /* ASHTimerViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHTimerViewModelTests.m; sourceTree = "<group>"; };
 		5EC0E85F186FBE4E00289440 /* ASHEditStepViewModelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHEditStepViewModelTests.m; sourceTree = "<group>"; };
 		5EC0E8611870C2F200289440 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5EC0E8631870D80A00289440 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -221,7 +221,7 @@
 			children = (
 				5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */,
 				5EC0E85B186FBE3200289440 /* ASHDetailViewModelTests.m */,
-				5EC0E85D186FBE3E00289440 /* ASHTimerViewModeltests.m */,
+				5EC0E85D186FBE3E00289440 /* ASHTimerViewModelTests.m */,
 				5E93AD9D186E4A1500795C9E /* ASHEditRecipeViewModelTests.m */,
 				5EC0E85F186FBE4E00289440 /* ASHEditStepViewModelTests.m */,
 				5E93AD6A1866695600795C9E /* Supporting Files */,
@@ -517,7 +517,7 @@
 				5E93AD8918672BE200795C9E /* ASHStep.m in Sources */,
 				5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */,
 				5EC0E860186FBE4E00289440 /* ASHEditStepViewModelTests.m in Sources */,
-				5EC0E85E186FBE3E00289440 /* ASHTimerViewModeltests.m in Sources */,
+				5EC0E85E186FBE3E00289440 /* ASHTimerViewModelTests.m in Sources */,
 				5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */,
 				5EC0E85C186FBE3200289440 /* ASHDetailViewModelTests.m in Sources */,
 				5E93AD8718672BA200795C9E /* ASHMasterViewModel.m in Sources */,
