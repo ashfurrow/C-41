@@ -16,4 +16,12 @@
 
 SpecBegin(ASHTimerViewModel)
 
+describe(@"ASHTimerViewModel", ^{
+    pending(@"should map recipeName correctly", ^{
+        
+    });
+    
+    pending(@")
+});
+
 SpecEnd
