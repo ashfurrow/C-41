@@ -289,7 +289,7 @@
         
         {
             ASHRecipe *delta100Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
-            delta100Recipe.name = NSLocalizedString(@"Ilford Delta 400", @"Initial setup title");
+            delta100Recipe.name = NSLocalizedString(@"Ilford Delta 100", @"Initial setup title");
             delta100Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's low-ISO film.", @"Initial setup subtitle");
             delta100Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
             
