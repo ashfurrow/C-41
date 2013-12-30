@@ -96,11 +96,7 @@
 #pragma mark - Private Methods
 
 -(void)clockTick:(NSTimer *)timer {
-#if DEBUG
-    self.currentStepTimeRemaining -= 10;
-#else
     self.currentStepTimRemaining--;
-#endif
     
     if (self.currentStepTimeRemaining < 0) {
         self.currentStepIndex++;
