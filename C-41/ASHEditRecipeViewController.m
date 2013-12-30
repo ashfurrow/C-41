@@ -221,6 +221,7 @@ static NSString *FilmTypeCellIdentifier = @"filmType";
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
 {
+    [self.viewModel moveStepFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath

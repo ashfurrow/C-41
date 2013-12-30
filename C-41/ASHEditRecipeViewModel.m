@@ -99,6 +99,16 @@
     self.model.steps = [stepsMutableOrderedSet copy];
 }
 
+-(void)moveStepFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
+    ASHStep *step = [self.model.steps objectAtIndex:fromIndex];
+    
+    NSMutableOrderedSet *mutableSteps = [self.model.steps mutableCopy];
+    [mutableSteps removeObjectAtIndex:fromIndex];
+    [mutableSteps insertObject:step atIndex:toIndex];
+    
+    self.model.steps = [mutableSteps copy];
+}
+
 -(NSString *)stepTitleAtIndex:(NSInteger)index {
     return [[self stepAtIndex:index] name];
 }

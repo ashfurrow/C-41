@@ -23,6 +23,7 @@
 -(void)willDismiss;
 -(void)addStep;
 -(void)removeStepAtIndex:(NSInteger)index;
+-(void)moveStepFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 -(BOOL)shouldShowCancelButton;
 -(NSInteger)numberOfSteps;
