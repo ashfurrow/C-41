@@ -96,7 +96,7 @@
 #pragma mark - Private Methods
 
 -(void)clockTick:(NSTimer *)timer {
-    self.currentStepTimRemaining--;
+    self.currentStepTimeRemaining--;
     
     if (self.currentStepTimeRemaining < 0) {
         self.currentStepIndex++;
