@@ -129,6 +129,74 @@
             c41Recipe.steps = [NSOrderedSet orderedSetWithArray:@[prewashStep, developerStep, blixStep, washStep, stabilizerStep]];
         }
         
+        
+        {
+            ASHRecipe *e6Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            e6Recipe.name = NSLocalizedString(@"E-6 Colour Process", @"Initial setup title");
+            e6Recipe.blurb = NSLocalizedString(@"Standard E-6 colour negative film recipe.", @"Initial setup subtitle");
+            e6Recipe.filmType = ASHRecipeFilmTypeColourPositive;
+            
+            ASHStep *prewashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            prewashStep.recipe = e6Recipe;
+            prewashStep.name = NSLocalizedString(@"Prewash", @"E-6 Prewash step name");
+            prewashStep.blurb = NSLocalizedString(@"Water", @"E-6 prewas step description");
+            prewashStep.temperatureC = 38;
+            prewashStep.duration = 60;
+            
+            ASHStep *firstDeveloperStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            firstDeveloperStep.recipe = e6Recipe;
+            firstDeveloperStep.name = NSLocalizedString(@"First Developer", @"E-6 developer step name");
+            firstDeveloperStep.temperatureC = 38;
+            firstDeveloperStep.agitationDuration = 5;
+            firstDeveloperStep.agitationFrequency = 15;
+            firstDeveloperStep.duration = 360;
+            
+            ASHStep *firstWashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            firstWashStep.recipe = e6Recipe;
+            firstWashStep.name = NSLocalizedString(@"Wash", @"E-6 wash step name");
+            firstWashStep.blurb = NSLocalizedString(@"Water", @"E-6 was step description");
+            firstWashStep.temperatureC = 38;
+            firstWashStep.agitationDuration = 0;
+            firstWashStep.agitationFrequency = 0;
+            firstWashStep.duration = 150;
+            
+            ASHStep *colourDeveloperStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            colourDeveloperStep.recipe = e6Recipe;
+            colourDeveloperStep.name = NSLocalizedString(@"Colour Developer", @"E-6 developer step name");
+            colourDeveloperStep.temperatureC = 38;
+            colourDeveloperStep.agitationDuration = 5;
+            colourDeveloperStep.agitationFrequency = 15;
+            colourDeveloperStep.duration = 360;
+            
+            ASHStep *secondWashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            secondWashStep.recipe = e6Recipe;
+            secondWashStep.name = NSLocalizedString(@"Wash", @"E-6 wash step name");
+            secondWashStep.blurb = NSLocalizedString(@"Water", @"E-6 was step description");
+            secondWashStep.temperatureC = 38;
+            secondWashStep.agitationDuration = 0;
+            secondWashStep.agitationFrequency = 0;
+            secondWashStep.duration = 150;
+            
+            ASHStep *blixStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            blixStep.recipe = e6Recipe;
+            blixStep.name = NSLocalizedString(@"Blix", @"E-6 blix step name");
+            blixStep.temperatureC = 38;
+            blixStep.agitationDuration = 5;
+            blixStep.agitationFrequency = 15;
+            blixStep.duration = 360;
+            
+            ASHStep *finalWashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
+            finalWashStep.recipe = e6Recipe;
+            finalWashStep.name = NSLocalizedString(@"Wash", @"E-6 wash step name");
+            finalWashStep.blurb = NSLocalizedString(@"Water", @"E-6 was step description");
+            finalWashStep.temperatureC = 38;
+            finalWashStep.agitationDuration = 0;
+            finalWashStep.agitationFrequency = 0;
+            finalWashStep.duration = 240;
+            
+            e6Recipe.steps = [NSOrderedSet orderedSetWithArray:@[prewashStep, firstDeveloperStep, firstWashStep, colourDeveloperStep, secondWashStep, blixStep, finalWashStep]];
+        }
+        
         {
             ASHRecipe *delta3200Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
             delta3200Recipe.name = NSLocalizedString(@"Ilford Delta 3200", @"Initial setup title");
