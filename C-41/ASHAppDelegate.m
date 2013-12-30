@@ -133,7 +133,7 @@
         {
             ASHRecipe *e6Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
             e6Recipe.name = NSLocalizedString(@"E-6 Colour Process", @"Initial setup title");
-            e6Recipe.blurb = NSLocalizedString(@"Standard E-6 colour negative film recipe.", @"Initial setup subtitle");
+            e6Recipe.blurb = NSLocalizedString(@"Standard E-6 colour positive film recipe.", @"Initial setup subtitle");
             e6Recipe.filmType = ASHRecipeFilmTypeColourPositive;
             
             ASHStep *prewashStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
