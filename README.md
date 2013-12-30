@@ -1,13 +1,11 @@
 C-41
 ====
 
-C-41 is (going to be) an application to help people develop film at home by providing a series of "recipes" for photographers to use.
+C-41 is an application to help people develop film at home by providing a series of "recipes" for photographers to use.
 
-Requirements
-----------------
+The app demonstrates how to use Core Data, unit tests, ReactiveCocoa, and Model-View-ViewModel. Pull requests are welcome. 
 
-- The ability to add and delete recipes.
-- The ability to use a recipe to time a development process.
+![Screenshot](https://raw.github.com/AshFurrow/C-41/master/screenshot.png)
 
 Development
 ----------------
