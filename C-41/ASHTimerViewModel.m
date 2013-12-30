@@ -47,7 +47,10 @@
     RAC(self, currentStepString) = [RACSignal combineLatest:@[RACObserve(self.model, steps), RACObserve(self, currentStepIndex)] reduce:^id(NSOrderedSet *steps, NSNumber *currentStepIndexNumber){
         NSInteger currentStepIndex = [currentStepIndexNumber integerValue];
         if (currentStepIndex >= 0 && currentStepIndex < steps.count) {
-            return [[steps objectAtIndex:currentStepIndex] name];
+            ASHStep *step = [steps objectAtIndex:currentStepIndex];
+            NSString *stepName = [step name];
+            NSString *temperatureString = [NSString stringWithFormat:@"%d℃", step.temperatureC];
+            return [NSString stringWithFormat:@"%@ – %@", stepName, temperatureString];
         } else {
             return @"";
         }
