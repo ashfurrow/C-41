@@ -200,7 +200,7 @@
         {
             ASHRecipe *delta3200Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
             delta3200Recipe.name = NSLocalizedString(@"Ilford Delta 3200", @"Initial setup title");
-            delta3200Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's high-ISO film.", @"Initial setup subtitle");
+            delta3200Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford’s high-ISO film.", @"Initial setup subtitle");
             delta3200Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
             
             ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
@@ -245,7 +245,7 @@
         {
             ASHRecipe *delta400Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
             delta400Recipe.name = NSLocalizedString(@"Ilford Delta 400", @"Initial setup title");
-            delta400Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's general-purpose film.", @"Initial setup subtitle");
+            delta400Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford’s general-purpose film.", @"Initial setup subtitle");
             delta400Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
             
             ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
@@ -290,7 +290,7 @@
         {
             ASHRecipe *delta100Recipe = [NSEntityDescription insertNewObjectForEntityForName:@"ASHRecipe" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
             delta100Recipe.name = NSLocalizedString(@"Ilford Delta 100", @"Initial setup title");
-            delta100Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford's low-ISO film.", @"Initial setup subtitle");
+            delta100Recipe.blurb = NSLocalizedString(@"Black and white process for Ilford’s low-ISO film.", @"Initial setup subtitle");
             delta100Recipe.filmType = ASHRecipeFilmTypeBlackAndWhite;
             
             ASHStep *developerStep = [NSEntityDescription insertNewObjectForEntityForName:@"ASHStep" inManagedObjectContext:[ASHCoreDataStack defaultStack].managedObjectContext];
