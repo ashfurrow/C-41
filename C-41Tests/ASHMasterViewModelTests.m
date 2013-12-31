@@ -147,6 +147,19 @@ describe(@"ASHMasterViewModel", ^{
         expect(subtitle).to.equal(returnedSubTitle);
         [mockObject verify];
     });
+    
+    it (@"should perform a fetch when the view model becomes active", ^{
+        id mockFetchedResultsController = [OCMockObject mockForClass:[NSFetchedResultsController class]];
+        [[mockFetchedResultsController expect] performFetch:nil];
+        
+        id mockViewModel = partialMockForViewModel();
+        [mockViewModel setFetchedResultsController:mockFetchedResultsController];
+        
+        [mockViewModel setActive:YES];
+        
+        [mockFetchedResultsController verify];
+        [mockFetchedResultsController stopMocking];
+    });
 });
 
 SpecEnd
