@@ -21,6 +21,8 @@
 
 @implementation ASHMasterViewController
 
+#pragma mark - UIViewController Overrides
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
