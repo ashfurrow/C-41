@@ -31,7 +31,11 @@
     
     self.updatedContentSignal = [[RACSubject subject] setNameWithFormat:@"ASHMasterViewModel updatedContentSignal"];
     
-    [self.fetchedResultsController performFetch:nil];
+    @weakify(self)
+    [self.didBecomeActiveSignal subscribeNext:^(id x) {
+        @strongify(self);
+        [self.fetchedResultsController performFetch:nil];
+    }];
     
     return self;
 }
