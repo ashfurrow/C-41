@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		251BA020AC1444D3B79A4119 /* libPods-C-41.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */; };
+		5E5E69E7187638F0008E9EAE /* CoreDataHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5E69E6187638F0008E9EAE /* CoreDataHelpers.m */; };
 		5E93AD3C1866695600795C9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3B1866695600795C9E /* Foundation.framework */; };
 		5E93AD3E1866695600795C9E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3D1866695600795C9E /* CoreGraphics.framework */; };
 		5E93AD401866695600795C9E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E93AD3F1866695600795C9E /* UIKit.framework */; };
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C-41.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E5E69E6187638F0008E9EAE /* CoreDataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelpers.m; sourceTree = "<group>"; };
+		5E5E69E818763906008E9EAE /* CoreDataHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelpers.h; sourceTree = "<group>"; };
 		5E93AD381866695600795C9E /* C-41.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C-41.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E93AD3B1866695600795C9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5E93AD3D1866695600795C9E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +155,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E5E69E91876390B008E9EAE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5E5E69E818763906008E9EAE /* CoreDataHelpers.h */,
+				5E5E69E6187638F0008E9EAE /* CoreDataHelpers.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		5E93AD2F1866695600795C9E = {
 			isa = PBXGroup;
 			children = (
@@ -195,12 +207,12 @@
 			children = (
 				5E93AD4C1866695600795C9E /* ASHAppDelegate.h */,
 				5E93AD4D1866695600795C9E /* ASHAppDelegate.m */,
+				C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */,
+				C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */,
 				5E93AD5B1866695600795C9E /* Images.xcassets */,
 				5E93AD801866718700795C9E /* View Controllers */,
 				5E93AD7F1866717D00795C9E /* Models */,
 				5E93AD441866695600795C9E /* Supporting Files */,
-				C02D7C5F186814F9002E9D79 /* ASHCoreDataStack.h */,
-				C02D7C60186814F9002E9D79 /* ASHCoreDataStack.m */,
 			);
 			path = "C-41";
 			sourceTree = "<group>";
@@ -219,6 +231,7 @@
 		5E93AD691866695600795C9E /* C-41Tests */ = {
 			isa = PBXGroup;
 			children = (
+				5E5E69E91876390B008E9EAE /* Helpers */,
 				5E93AD851866782600795C9E /* ASHMasterViewModelTests.m */,
 				5EC0E85B186FBE3200289440 /* ASHDetailViewModelTests.m */,
 				5EC0E85D186FBE3E00289440 /* ASHTimerViewModelTests.m */,
@@ -518,6 +531,7 @@
 				5E93AD861866782600795C9E /* ASHMasterViewModelTests.m in Sources */,
 				5EC0E860186FBE4E00289440 /* ASHEditStepViewModelTests.m in Sources */,
 				5EC0E85E186FBE3E00289440 /* ASHTimerViewModelTests.m in Sources */,
+				5E5E69E7187638F0008E9EAE /* CoreDataHelpers.m in Sources */,
 				5E93AD8818672BE200795C9E /* ASHRecipe.m in Sources */,
 				5EC0E85C186FBE3200289440 /* ASHDetailViewModelTests.m in Sources */,
 				5E93AD8718672BA200795C9E /* ASHMasterViewModel.m in Sources */,

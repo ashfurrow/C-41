@@ -11,22 +11,47 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
+#import "CoreDataHelpers.h"
 
 #import "ASHDetailViewModel.h"
+#import "ASHTimerViewModel.h"
+
 
 SpecBegin(ASHDetailViewModel)
 
 describe(@"ASHDetailViewModel", ^{
-    pending (@"should have the correctly mapped properties", ^{
+    static ASHRecipe *recipe;
+    
+    beforeEach(^{
+        NSManagedObjectContext *context = [[ASHCoreDataStack defaultStack] managedObjectContext];
+        [context reset];
         
+        recipe = setupRecipe(context);
     });
     
-    pending (@"should return the correct title/subtitle for steps", ^{
+    it (@"should have the correctly mapped properties", ^{
+        ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:recipe];
         
+        expect(viewModel.recipeName).to.equal(recipe.name);
+        expect(viewModel.recipeDescription).to.equal(recipe.blurb);
+        expect(viewModel.recipeFilmTypeString).to.equal(@"Colour Negative");
     });
     
-    pending (@"should return a correctly instantiated timer view model", ^{
+    it (@"should return the correct title/subtitle for steps", ^{
+        ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:recipe];
         
+        NSString *durationString = @"1:00";
+        
+        expect([viewModel titleForStepAtIndex:0]).to.equal([recipe.steps[0] name]);
+        expect([viewModel subtitleForStepAtIndex:0]).to.equal(durationString);
+    });
+    
+    it (@"should return a correctly instantiated timer view model", ^{
+        ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:recipe];
+        
+        ASHTimerViewModel *timerViewModel = [viewModel timerViewModel];
+        
+        expect(timerViewModel.model).to.equal(viewModel.model);
     });
 });
 
