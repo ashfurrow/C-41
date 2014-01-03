@@ -11,12 +11,22 @@
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import <OCMock/OCMock.h>
+#import "CoreDataHelpers.h"
 
 #import "ASHDetailViewModel.h"
+
 
 SpecBegin(ASHDetailViewModel)
 
 describe(@"ASHDetailViewModel", ^{
+    static ASHRecipe *recipe;
+    
+    beforeEach(^{
+        [[[ASHCoreDataStack defaultStack] managedObjectContext] reset];
+        
+        recipe = setupRecipe([[ASHCoreDataStack defaultStack] managedObjectContext]);
+    });
+    
     pending (@"should have the correctly mapped properties", ^{
         
     });

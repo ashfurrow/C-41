@@ -17,5 +17,6 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
+- (void)ensureInitialLoad;
 
 @end
