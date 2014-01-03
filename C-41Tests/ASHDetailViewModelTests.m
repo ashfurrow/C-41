@@ -46,13 +46,13 @@ describe(@"ASHDetailViewModel", ^{
         expect([viewModel subtitleForStepAtIndex:0]).to.equal(durationString);
     });
     
-    it (@"should return a correctly instantiated timer view model", ^{
-        ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:recipe];
-        
-        ASHTimerViewModel *timerViewModel = [viewModel timerViewModel];
-        
-        expect(timerViewModel.model).to.equal(viewModel.model);
-    });
+//    it (@"should return a correctly instantiated timer view model", ^{
+//        ASHDetailViewModel *viewModel = [[ASHDetailViewModel alloc] initWithModel:recipe];
+//        
+//        ASHTimerViewModel *timerViewModel = [viewModel timerViewModel];
+//        
+//        expect(timerViewModel.model).to.equal(viewModel.model);
+//    });
 });
 
 SpecEnd

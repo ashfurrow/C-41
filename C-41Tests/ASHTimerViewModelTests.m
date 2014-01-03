@@ -13,11 +13,22 @@
 #import <OCMock/OCMock.h>
 
 #import "ASHTimerViewModel.h"
+#import "CoreDataHelpers.h"
 
 SpecBegin(ASHTimerViewModel)
 
 describe(@"ASHTimerViewModel", ^{
+    static ASHRecipe *recipe;
+    
+    beforeEach(^{
+        NSManagedObjectContext *context = [[ASHCoreDataStack defaultStack] managedObjectContext];
+        [context reset];
+        
+        recipe = setupRecipe(context);
+    });
+
     pending(@"should map recipeName correctly", ^{
+        ASHTimerViewModel *viewModel = [[ASHTimerViewModel alloc] initWithModel:recipe];
         
     });
 });
