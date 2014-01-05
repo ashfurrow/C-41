@@ -64,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		3CE0365B9C0E4C89BD732392 /* libPods-C-41.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-C-41.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E246D141879DD9E00C8BDED /* TestHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHelpers.h; sourceTree = "<group>"; };
 		5E5E69E6187638F0008E9EAE /* CoreDataHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelpers.m; sourceTree = "<group>"; };
 		5E5E69E818763906008E9EAE /* CoreDataHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelpers.h; sourceTree = "<group>"; };
 		5E93AD381866695600795C9E /* C-41.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C-41.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +161,7 @@
 			children = (
 				5E5E69E818763906008E9EAE /* CoreDataHelpers.h */,
 				5E5E69E6187638F0008E9EAE /* CoreDataHelpers.m */,
+				5E246D141879DD9E00C8BDED /* TestHelpers.h */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";

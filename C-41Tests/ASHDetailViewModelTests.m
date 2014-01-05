@@ -6,12 +6,7 @@
 //  Copyright (c) 2013 Ash Furrow. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-#import <Specta/Specta.h>
-#define EXP_SHORTHAND
-#import <Expecta/Expecta.h>
-#import <OCMock/OCMock.h>
-#import "CoreDataHelpers.h"
+#import "TestHelpers.h"
 
 #import "ASHDetailViewModel.h"
 #import "ASHTimerViewModel.h"
