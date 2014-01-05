@@ -35,16 +35,43 @@ describe(@"ASHEditRecipeViewModel", ^{
         expect(viewModel.filmType).to.equal(recipe.filmType);
     });
     
-    pending (@"cancel deletes the model iff inserting", ^{
+    it (@"cancel deletes the model iff inserting", ^{
+        ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
         
+        [viewModel cancel];
+        
+        expect([[recipe.managedObjectContext deletedObjects] containsObject:recipe]).to.beFalsy();
+        
+        viewModel.inserting = YES;
+        
+        [viewModel cancel];
+        
+        expect([[recipe.managedObjectContext deletedObjects] containsObject:recipe]).to.beTruthy();
     });
     
-    pending (@"willDismiss saves the model's context", ^{
+    it (@"willDismiss saves the model's context", ^{
+        __block BOOL saved = NO;
+        ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
         
+        id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextDidSaveNotification object:recipe.managedObjectContext queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+            saved = YES;
+        }];
+        
+        [viewModel willDismiss];
+        
+        expect(saved).to.beTruthy();
+        
+        [[NSNotificationCenter defaultCenter] removeObserver:observer];
     });
     
-    pending (@"shouldShowCancelButton appears iff inserting",^{
+    it (@"shouldShowCancelButton appears iff inserting",^{
+        ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
         
+        expect(viewModel.shouldShowCancelButton).to.beFalsy();
+        
+        viewModel.inserting = YES;
+        
+        expect(viewModel.shouldShowCancelButton).to.beTruthy();
     });
     
     pending (@"returns the correct properties of steps and film type", ^{
