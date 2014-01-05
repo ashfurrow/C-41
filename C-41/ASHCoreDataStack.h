@@ -10,13 +10,14 @@
 
 @interface ASHCoreDataStack : NSObject
 
-+ (instancetype)defaultStack;
++(instancetype)defaultStack;
++(instancetype)inMemoryStack;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-- (void)saveContext;
-- (void)ensureInitialLoad;
+-(void)saveContext;
+-(void)ensureInitialLoad;
 
 @end

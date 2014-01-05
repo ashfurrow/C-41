@@ -27,7 +27,7 @@ describe(@"ASHTimerViewModel", ^{
     static ASHRecipe *recipe;
     
     beforeEach(^{
-        NSManagedObjectContext *context = [[ASHCoreDataStack defaultStack] managedObjectContext];
+        NSManagedObjectContext *context = [[ASHCoreDataStack inMemoryStack] managedObjectContext];
         [context reset];
         
         recipe = setupRecipe(context);

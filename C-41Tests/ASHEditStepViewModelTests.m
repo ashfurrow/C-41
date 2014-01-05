@@ -16,7 +16,7 @@ describe(@"ASHEditStepViewModel", ^{
     static ASHStep *step;
     
     beforeEach(^{
-        NSManagedObjectContext *context = [[ASHCoreDataStack defaultStack] managedObjectContext];
+        NSManagedObjectContext *context = [[ASHCoreDataStack inMemoryStack] managedObjectContext];
         [context reset];
         
         ASHRecipe *recipe = setupRecipe(context);
