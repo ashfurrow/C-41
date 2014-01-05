@@ -73,7 +73,7 @@
     }
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"C_41" withExtension:@"momd"];
     self.managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
+    return self.managedObjectModel;
 }
 
 // Returns the persistent store coordinator for the application.
