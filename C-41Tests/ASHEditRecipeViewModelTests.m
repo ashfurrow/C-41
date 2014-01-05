@@ -14,6 +14,7 @@
 #import "CoreDataHelpers.h"
 
 #import "ASHEditRecipeViewModel.h"
+#import "ASHEditStepViewModel.h"
 
 SpecBegin(ASHEditRecipeViewModel)
 
@@ -74,12 +75,25 @@ describe(@"ASHEditRecipeViewModel", ^{
         expect(viewModel.shouldShowCancelButton).to.beTruthy();
     });
     
-    pending (@"returns the correct properties of steps and film type", ^{
+    it (@"returns the correct properties of steps and film type", ^{
+        ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
+        NSInteger section = 1;
+        int32_t filmType = 1;
+        NSInteger index = 0;
         
+        expect(viewModel.numberOfSteps).to.equal(recipe.steps.count);
+        expect([viewModel filmTypeForSection:section]).to.equal(filmType);
+        expect([viewModel sectionForFilmTpe:filmType]).to.equal(section);
+        expect([viewModel stepTitleAtIndex:index]).to.equal([recipe.steps[index] name]);
     });
     
-    pending (@"returns a correctly instantiated edit step view model", ^{
+    it (@"returns a correctly instantiated edit step view model", ^{
+        ASHEditRecipeViewModel *viewModel = [[ASHEditRecipeViewModel alloc] initWithModel:recipe];
+        NSInteger index = 0;
         
+        ASHEditStepViewModel *editStepViewModel = [viewModel editStepViewModelAtIndex:index];
+        
+        expect(editStepViewModel.model).to.equal(viewModel.model.steps[index]);
     });
 });
 

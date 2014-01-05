@@ -26,6 +26,7 @@
 -(void)moveStepFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
 
 -(BOOL)shouldShowCancelButton;
+
 -(NSInteger)numberOfSteps;
 -(int32_t)filmTypeForSection:(NSInteger)section;
 -(NSInteger)sectionForFilmTpe:(int32_t)filmType;
