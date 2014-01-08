@@ -1,6 +1,8 @@
 C-41
 ====
 
+[![Build Status](https://travis-ci.org/AshFurrow/C-41.png?branch=master)](https://travis-ci.org/AshFurrow/C-41)
+
 C-41 is an application to help people develop film at home by providing a series of "recipes" for photographers to use.
 
 The app demonstrates how to use Core Data, unit tests, ReactiveCocoa, and Model-View-ViewModel. Pull requests are welcome. 
