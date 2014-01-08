@@ -1,2 +1,4 @@
 language: objective-c
 rvm: 1.9.3
+
+xcodebuild -workspace C-41.xcworkspace -scheme C-41 -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
