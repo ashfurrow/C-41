@@ -7,11 +7,6 @@ The app demonstrates how to use Core Data, unit tests, ReactiveCocoa, and Model-
 
 ![Screenshot](https://raw.github.com/AshFurrow/C-41/master/screenshot.png)
 
-Development
-----------------
-
-This project is under active development. Check back here for more details. 
-
 Building 
 ----------------
 
