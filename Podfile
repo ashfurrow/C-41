@@ -5,7 +5,7 @@
 target "C-41" do
   
   pod 'ReactiveCocoa', '2.1.8'
-  pod 'libextobjc', '0.3'
+  pod 'libextobjc', ' ~> 0.4'
   pod 'ReactiveViewModel', '0.1.1'
   pod 'UIColor-Utilities', '1.0.1'
 
