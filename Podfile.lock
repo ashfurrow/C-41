@@ -1,5 +1,5 @@
 PODS:
-  - Expecta (0.2.3)
+  - Expecta (0.2.4)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -35,7 +35,7 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - OCMock (2.2.2)
+  - OCMock (2.2.4)
   - ReactiveCocoa (2.1.8):
     - ReactiveCocoa/Core (= 2.1.8)
     - ReactiveCocoa/no-arc (= 2.1.8)
@@ -57,12 +57,12 @@ DEPENDENCIES:
   - UIColor-Utilities (= 1.0.1)
 
 SPEC CHECKSUMS:
-  Expecta: 578e0c29df79a96a159187599e2def686ef6a66c
-  libextobjc: d6146fce3ebea986b7f75fcb4c967639200b88b0
-  OCMock: ee92ff671156212865397cd6fbae60a2d3698fb8
-  ReactiveCocoa: 399d3ad0c8ac73d79bed5bcd076a04f46ec635fc
-  ReactiveViewModel: 5a678d4f2cb7b6f7f60b10f58c37e30f9db684a2
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
-  UIColor-Utilities: 3f13aebe447f5e19c8d3aa18c194c53116b23537
+  Expecta: cfaf1d3e2e194ca704a25e997093d30a1ce70b61
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  OCMock: a6a7dc0e3997fb9f35d99f72528698ebf60d64f2
+  ReactiveCocoa: f89f2e009a87951b50321bf9feb958823fcc617e
+  ReactiveViewModel: 171492c2d30d3eb3c89730fd180c0f6a2ae7e774
+  Specta: 15a276a6343867b426d5ed135d5aa4d04123a573
+  UIColor-Utilities: 6746a54dcdb3bc012dd7aeaeea5588ae2100beb2
 
 COCOAPODS: 0.35.0
