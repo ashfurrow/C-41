@@ -52,7 +52,6 @@
     [RACObserve(self.viewModel, complete) subscribeNext:^(NSNumber *complete) {
         if (complete.boolValue == YES) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Recipe Complete", @"Recipe complete dialogue title") message:NSLocalizedString(@"Your film has been developed.", @"Recipe complete dialogue text") delegate:Nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", @"Recipe complete dialogue OK button"), nil];
-            @weakify(self);
             [alertView.rac_buttonClickedSignal subscribeNext:^(id _) {
                 @strongify(self);
                 [self dismiss];
