@@ -72,6 +72,7 @@
 }
 
 -(void)cancel {
+    [self pause];
     [self dismiss];
 }
 
